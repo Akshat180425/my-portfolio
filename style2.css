@@ -358,3 +358,42 @@ body {
     opacity: 1;
   }
 }
+
+@media screen and (max-width: 868px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .logo {
+    margin-bottom: 15px;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .navbar {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .home {
+    text-align: center;
+  }
+  
+  .home-content {
+    text-align: center;
+  }
+  
+  .home-content .box {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 15px;
+  }
+}
