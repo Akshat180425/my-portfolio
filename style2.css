@@ -359,6 +359,24 @@ body {
   }
 }
 
+* {
+  min-width: 0; /* Reset any conflicting min-widths */
+}
+
+html, body {
+  min-width: 600px !important;
+  overflow-x: auto;
+  min-height: 750px;
+}
+
+.header {
+  min-width: 600px;
+}
+
+.home {
+  min-width: 600px;
+}
+
 @media screen and (max-width: 868px) {
   .header {
     flex-direction: column;
@@ -372,6 +390,12 @@ body {
   .navbar {
     display: flex;
     justify-content: center;
+  }
+}
+
+@media screen and (max-width: 1700px) {
+  .abc {
+    display: none;
   }
 }
 
