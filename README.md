@@ -23,6 +23,12 @@ I built this to showcase my skills, projects, and my journey.
 
 > Note: The site is still evolving. More content and features will be available soon!
 
+### Image Credits:
+- [Unsplash](unsplash.com)
+- [Wallpaper Flare](wallpaperflare.com)
+- 
+> If you are the rightful owner of any of the images used and want it removed and credited properly, please contact me.
+
 ## Contact Me:
 If you'd like to collaborate, connect, or share feedback, feel free to reach out.
 - Email: [akshatbawa130806@gmail.com](mailto:akshatbawa130806@gmail.com)
