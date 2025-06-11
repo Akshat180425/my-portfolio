@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/*
+'*' is the universal selector.
+With 'box-sizing: content-box;', width and height only include content and the padding and border are added on top, increasing the size.
+With this line of code, they include content + padding + bodrer.
+Multiple fonts as not every font is available on every user's device.
+The ones with spaces or other special characters are in inverted commas.
+*/
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(135deg, #d2e7e2, #d0bfda 112.5%);
+}
+
+/* 
+100vh means 100% of the viewport height.
+Using flexbox to align content.
+'align-items' aligns items along the cross axis (perpendicular to the main axis).
+'justify-content' aligns items along the main axis (the direction in which the flex container is laid out).
+*/
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 425px;
+  max-height: 350px;
+  height: 100%;
+  width: 100%;
+  background: #f1f1f1;
+  box-shadow: 0 20px 35px rgba(0,0, 0, 0.375);
+  border-radius: 25px;
+  position: relative;
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.profile-card::before {
+  content: "";
+  position: absolute;
+  height: 45%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #4070f4;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+}
+
+/* 
+'position: relative;' in .profile-card means that .profile-card will serve as a reference point for any absolutely positioned elements inside it (like ::before pseudo-element).
+The '::before' pseudo-element is used to insert content before the actual content of the .profile-card element.
+Here, an empty string ("") in content means that the pseudo-element doesn't have any textual content or visible symbols.
+'absolute' positions the pseudo-element absolutely within its containing block, which in this case is .profile-card.
+*/
+
+.image {
+  position: relative;
+  height: 165px;
+  width: 165px;
+  border-radius: 50%;
+  background-color: #4070f4;
+  padding: 3px;
+  margin-left: 5px;
+  margin-bottom: 10px;
+}
+
+.image .profile-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  object-position: 0px -11px;
+  border: 3px solid #fff;
+}
+
+.profile-card .text-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-data .name {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.text-data .education {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.profile-card .buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.buttons .link {
+  display: flex;
+  background-color: #4070f4;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  height: 30px;
+  width: 30px;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.profile-card .boxes {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.boxes .button {
+  color: #fff;
+  padding: 7.5px 25px;
+  border: none;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 400;
+  margin: 0 10px;
+  cursor: pointer;
+  background-color: rgb(52, 106, 255);
+  transition: all 0.35s ease-in;
+}
+
+.boxes .button:hover {
+  background-color: #073fd8
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

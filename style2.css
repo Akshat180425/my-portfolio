@@ -1,0 +1,360 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+  color: #c0e3e7;
+}
+
+.header {
+  width: 100%;
+  margin: 0;
+  padding: 20px 12.5% 20px 10.25%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: transparent;
+  display: flex;
+  justify-content: space-between; /* Equal space between all the items in between (no space before the first or after the last - 'space-around' or 'space-evenly') */
+  align-items: center;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 37.5px;
+  position: relative;
+  color: #ffffff;
+  text-decoration: none; /* Used to remove any default text decoration from an element — most commonly used to remove underlines from links. */
+  font-weight: 600; /* thickness (or boldness) - 400: Normal - 700: Bold */
+}
+
+/* Not all fonts support every weight. If the font doesn’t have a 600 weight defined, the browser will simulate it or pick the closest available. */
+
+.logo::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  background-color:rgb(0, 18, 22);
+  transition: 0.25s;
+  animation: xyz 1s ease forwards; /* 'ease' - The timing function — controls how the animation accelerates/decelerates. 'ease' means it starts slow, speeds up, then slows down again. 'forwards' - The fill mode — keeps the final state of the animation even after it finishes. */
+  animation-delay: 375ms
+}
+
+.navbar a {
+  color: #ededed;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 450;
+  margin-left: 50px;
+  transition: 0.3s; /* Makes style changes happen smoothly over 0.3 seconds instead of instantly. */
+}
+
+.navbar a:hover {
+  color: rgb(20, 170, 240);
+}
+
+.navbar a.active {
+  color: rgb(20, 170, 255);
+}
+
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgb(0, 18, 22);
+  z-index: 2;
+}
+
+.home {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100vh;
+  padding: 0 10%; /* Top / Bottom   Left / Right */
+  background-color: rgb(0, 18, 22); 
+  overflow: hidden; /* Clip content that goes outside the boundaries of an element. */
+}
+
+.background-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: url('IMG1.jpg') no-repeat center center fixed; /* center center - horizontally, vertically */
+  background-size: 80%;
+  background-position: 600px;
+  opacity: 0;
+  z-index: 1;
+  animation: fadeIn 3.25s ease-in-out forwards; /* similar to ease, but ease has smoother acceleration */
+  animation-delay: 500ms;
+}
+
+.home-content {
+  max-width: 700px;
+  z-index: 2;
+}
+
+.home-content h1 {
+  position: relative;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.2; /* Vertical Spacing */
+}
+
+.home-content h1::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  background-color: rgb(0, 18, 22);
+  transition: 0.25s;
+  animation: xyz 1s ease forwards;
+  animation-delay: 500ms
+}
+
+.home-content h3 {
+  position: relative;
+  font-size: 32px;
+  font-weight: 700;
+  color: #00abf0;
+}
+
+.home-content h3::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  background-color: rgb(0, 18, 22);
+  transition: 0.25s;
+  animation: xyz 1s ease forwards;
+  animation-delay: 750ms
+}
+
+.home-content p {
+  position: relative;
+  font-size: 16px;
+  margin: 10px 0 20px; /* Top L/R Bottom */
+}
+
+.home-content p:nth-child(3)::before { /* 3 as nth child is of home-content, 1 will be wrong */
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  background-color: rgb(0, 18, 22);
+  transition: 0.25s;
+  animation: xyz 1s ease forwards;
+  animation-delay: 970ms
+}
+
+.home-content p:nth-child(4)::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  background-color: rgb(0, 18, 22);
+  transition: 0.25s;
+  animation: xyz 1s ease forwards;
+  animation-delay: 990ms
+}
+
+.home-content p:nth-child(5)::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  background-color: rgb(0, 18, 22);
+  transition: 0.25s;
+  animation: xyz 1s ease forwards;
+  animation-delay: 1100ms
+}
+
+.home-content p:nth-child(6)::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  background-color: rgb(0, 18, 22);
+  transition: 0.25s;
+  animation: xyz 1s ease forwards;
+  animation-delay: 1300ms
+}
+
+.home-content .box {
+  margin-top: 20px;
+  margin-left: -1.5px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 345px;
+  height: 45px;
+}
+
+.box a:nth-child(2) {
+  background-color: transparent;
+  color: #00abf0;
+}
+
+.box a {
+  width: 150px;
+  height: 100%;
+  background-color: #00abf0;
+  border: 2px solid #00abf0;
+  border-radius: 7.5px;
+  display: inline-flex; /*  */
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: rgb(0, 18, 22);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.75px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.25s;
+}
+
+.home-content .box::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  background-color: rgb(0, 18, 22);
+  transition: 0.25s;
+  animation: xyz 1s ease forwards;
+  animation-delay: 1500ms;
+}
+
+.box a:hover {
+  color: #00abf0;
+}
+
+.box a::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 18, 22);
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.box a:hover::before {
+  width: 100%;
+}
+
+.box a:nth-child(2)::before {
+  background: #00abf0;
+}
+
+.box a:nth-child(2):hover {
+  color: rgb(0, 18, 22);
+}
+
+.a {
+  position: absolute;
+  top: 0;
+  right: 100px;
+  width: 750px;
+  height: 100%;
+  background: transparent;
+  transition: 1.5s;
+}
+
+.a:hover {
+  background-color: rgb(0, 18, 22);
+  opacity: 0.25;
+}
+
+@keyframes xyz {
+  100% {
+    width: 0;
+  }
+}
+
+.abc {
+  position: absolute;
+  top: 0;
+  right: 150px;
+  width: 700px;
+  height: 100%;
+  background-color: transparent;
+  transition: 1.5s;
+  z-index: 10;
+}
+
+.abc:hover {
+  background-color: rgb(0, 18, 22);
+  opacity: 0.65;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeinout {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeoutin {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

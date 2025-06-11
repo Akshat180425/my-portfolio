@@ -1,0 +1,195 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+  min-height: 330vh;
+  background: #6dbfb8;
+}
+
+.header {
+  width: 100%;
+  margin: 0;
+  top: 50px;
+  left: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes largen1 {
+  to {
+    transform: scale(1.05);
+  }  
+}
+
+@keyframes largen2 {
+  to {
+    transform: scale(1.05) translateY(6px);
+  }  
+}
+
+.head {
+  font-size: 100px;
+  color: #212c3e;
+  text-decoration: underline #fff 2.5px solid;
+  text-underline-offset: 25px;
+  animation: largen1 1s ease-in-out forwards;
+}
+
+.liner {
+  top: 25px;
+  letter-spacing: 10px;
+  position: relative;
+  font-weight: 800;
+  animation: largen2 1s ease-in-out forwards;
+}
+
+.journey {
+  position: relative;
+  top: 120px;
+  width: 100%;
+  min-height: 310vh;
+  background-color: #212c3e;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.timeline {
+  animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+
+.circle {
+  top: 20px;
+  transform: translate(-15px);
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #6dbfb8;
+}
+
+.circle2 {
+  top: 20px;
+  transform: translate(-15px, 2650px) rotate(180deg);
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  font-size: 40px;
+  color: #6dbfb8;
+  border-radius: 50%;
+}
+
+.line {
+  position: absolute;
+  top: 50px;
+  width: 10px;
+  height: 2650px;
+  background-color: #6dbfb8;
+}
+
+.connection {
+  position: absolute;
+  width: 100px;
+  height: 10px;
+  background-color: #6dbfb8;
+}
+
+.logo {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 90px;
+  color: #212c3e;
+  background-color: #fff;
+  border-radius: 10%;
+  text-shadow:
+    0.5px 0 currentColor,
+    -0.5px 0 currentColor,
+    0 0.5px currentColor,
+    0 -0.5px currentColor;
+}
+
+.year {
+  position: absolute;
+  font-size: 75px;
+  color: #cd5d59;
+  font-weight: 800;
+}
+
+.title {
+  position: absolute;
+  width: 500px;
+  font-size: 37.5px;
+  color: #6dbfb8;
+  font-weight: 800;
+}
+
+.textbox {
+  color: #fff;
+  font-size: 20px;
+  position: absolute;
+  width: 500px;
+  height: 200px;
+  font-family: sans-serif;
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+@keyframes xyz {
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes blurReveal {
+  from {
+    filter: blur(5px);
+    opacity: 0;
+  }
+  to {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
