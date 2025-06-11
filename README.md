@@ -26,7 +26,7 @@ I built this to showcase my skills, projects, and my journey.
 ### Image Credits:
 - [Unsplash](unsplash.com)
 - [Wallpaper Flare](wallpaperflare.com)
-- 
+
 > If you are the rightful owner of any of the images used and want it removed and credited properly, please contact me.
 
 ## Contact Me:
