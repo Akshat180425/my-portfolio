@@ -22,12 +22,6 @@ body {
   justify-content: center;
 }
 
-@keyframes largen1 {
-  to {
-    transform: scale(1.05);
-  }  
-}
-
 @keyframes largen2 {
   to {
     transform: scale(1.05) translateY(6px);
@@ -50,6 +44,17 @@ body {
   animation: largen2 1s ease-in-out forwards;
 }
 
+.abc {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.abc.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .journey {
   position: relative;
   top: 120px;
@@ -62,11 +67,6 @@ body {
   align-items: center;
   overflow: hidden;
 }
-
-.timeline {
-  animation: fadeIn 2.25s ease-in-out forwards;
-}
-
 
 .circle {
   top: 20px;
@@ -87,6 +87,12 @@ body {
   font-size: 40px;
   color: #6dbfb8;
   border-radius: 50%;
+}
+
+.jitems:nth-child(1),
+.jitems:nth-child(2),
+.jitems:nth-child(3) {
+  animation: fadeInUp 1.5s ease-in-out forwards;
 }
 
 .line {
@@ -120,6 +126,7 @@ body {
     -0.5px 0 currentColor,
     0 0.5px currentColor,
     0 -0.5px currentColor;
+  z-index: 10;
 }
 
 .year {
@@ -183,13 +190,52 @@ body {
   }
 }
 
-@keyframes fadeInUp {
+@keyframes fadeInUp1 {
   from {
     opacity: 0;
     transform: translateY(20px);
   }
   to {
     opacity: 1;
+    transform: translateY(0) scale(1.15);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes fadeInUp2 {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(6px) scale(1.15);
+  }
+}
+
+.logo:hover {
+  outline: #6dbfb8 4.3875px solid;
+  border: #6dbfb8 4.3875px solid;
+  background-color: rgb(255, 255, 255);
+  color: #00163a;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.head {
+  animation: fadeInUp1 1.5s ease-out forwards;
+}
+
+.liner {
+  animation: fadeInUp2 1.5s ease-out forwards;
 }
