@@ -1,6 +1,6 @@
 # My Portfolio
 
-A personal portfolio website featuring a detailed journey timeline, showcased projects, and a profile card. Built to highlight my background, growth, and work in a clean and organized layout.
+A personal portfolio website featuring a detailed journey timeline, my projects, and a profile card. Built to highlight my background, growth, and work in a clean and organized layout.
 
 Welcome to the source code of my Portfolio website!
 I built this to showcase my skills, projects, and my journey.
