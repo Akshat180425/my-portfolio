@@ -9,14 +9,15 @@ I built this to showcase my skills, projects, and my journey.
 - About Me
 - My Journey
 - My Projects
-- My résumé
+- My résumé (To be added soon)
 - Contact details
+- Threadboard (To be added soon)
 - Profile Card
 
 ## Tech Stack:
 - HTML5
 - CSS3
-- Javascript (coming soon)
+- Javascript
 
 ## Live Website:
 [Click here to view my portfolio](https://akshat180425.github.io/my-portfolio/)
