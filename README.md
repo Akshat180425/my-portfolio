@@ -28,7 +28,7 @@ I built this to showcase my skills, projects, and my journey.
 - [Unsplash](unsplash.com)
 - [Wallpaper Flare](wallpaperflare.com)
 
-> If you are the rightful owner of any of the images used and want it removed and credited properly, please contact me.
+> If you are the rightful owner of any of the images used and want it removed or credited properly, please contact me.
 
 ## Contact Me:
 If you'd like to collaborate, connect, or share feedback, feel free to reach out.
