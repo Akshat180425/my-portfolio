@@ -1,4 +1,4 @@
-# Akshat Bawa — Work & Wonder
+# Akshat Bawa - Work & Wonder
 
 A personal portfolio with nine main pages and individual poetry pages, in a warm evening listening room theme. Built with HTML, CSS, browser JavaScript, and a small Node.js generator. No third-party runtime dependencies.
 
