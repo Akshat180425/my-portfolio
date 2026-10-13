@@ -1,6 +1,6 @@
 import { profile } from '../data/content.mjs';
 import { origin, pages, route } from '../config/site.mjs';
-import { esc, arrow, link, external } from './ui.mjs';
+import { esc, arrow, link, external, gmailComposeUrl } from './ui.mjs';
 
 function nav(id) {
   return `<a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="header-inner wrap"><a class="brand" href="/" aria-label="Akshat Bawa, home"><span class="monogram">ab<span>.</span></span><span class="brand-name">Akshat Bawa</span></a><nav class="main-nav" aria-label="Primary"><a href="/projects/" ${id==='projects'?'aria-current="page"':''}>Projects</a><a href="/experience/" ${id==='experience'?'aria-current="page"':''}>Experience</a><a href="/library/" ${id==='library'?'aria-current="page"':''}>Library</a><a href="${id==='home'?'/contact/':'/listening-room/'}" ${id==='listening-room'?'aria-current="page"':''}>${id==='home'?'Contact':'Listening Room'}</a></nav><button class="index-button" type="button" aria-haspopup="dialog" aria-controls="site-index"><span>Index</span><span class="menu-icon" aria-hidden="true"><i></i><i></i></span></button></div></header>
@@ -9,7 +9,7 @@ function nav(id) {
 
 function footer(id) {
  const compact = id === 'contact';
- const invitation = compact ? '' : `<div class="footer-top"><div><p class="eyebrow">The conversation continues</p><h2>Say hello<span class="gold">.</span></h2><a class="footer-email" href="mailto:${profile.email}">${profile.email} ${arrow}</a></div><div class="footer-links"><div>${link('/about/','About')}${link('/now/','Now')}${link('/contact/','Contact')}</div><div>${external(profile.github,'GitHub')}${external(profile.linkedin,'LinkedIn')}${link('/marginalia/','Marginalia')}</div></div></div>`;
+ const invitation = compact ? '' : `<div class="footer-top"><div><p class="eyebrow">The conversation continues</p><h2>Say hello<span class="gold">.</span></h2>${external(gmailComposeUrl(profile.email), esc(profile.email), 'footer-email')}</div><div class="footer-links"><div>${link('/about/','About')}${link('/now/','Now')}${link('/contact/','Contact')}</div><div>${external(profile.github,'GitHub')}${external(profile.linkedin,'LinkedIn')}${link('/marginalia/','Marginalia')}</div></div></div>`;
  return `<footer class="site-footer${compact ? ' site-footer-compact' : ''} wrap">${invitation}<div class="footer-bottom"><span>© 2026 Akshat Bawa</span><span>Built with intention. Always in progress.</span><a href="#top">Back to top ↑</a></div></footer>`;
 }
 

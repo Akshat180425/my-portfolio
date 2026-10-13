@@ -1,4 +1,6 @@
 // Edit the content here, then run: npm run build
+import { compareText, compareBy } from '../utils/sort.mjs';
+
 export const profile = {
   name: 'Akshat Bawa',
   email: 'akshatbawa130806@gmail.com',
@@ -55,14 +57,14 @@ export const projects = [
 
 export const experience = [
   {
-    company: 'Evizen AI', fullName: 'Evizen AI Private Limited', role: 'Software Development Engineer Intern',
+    id: 'evizen-ai', company: 'Evizen AI', fullName: 'Evizen AI Private Limited', role: 'Software Development Engineer Intern',
     date: 'May — July 2026', place: 'IIT Ropar', label: 'Quality, under pressure.',
     summary: 'Quality assurance and release testing for Unilic, a classroom attendance application.',
     points: ['Tested Android and iOS builds through functional and regression testing across successive releases.', 'Stress-tested attendance and verification workflows under concurrent classroom-scale usage and degraded conditions.', 'Tracked defects through resolution, verified fixes, and supported release readiness for the pilot launch.'],
     tags: ['Quality assurance', 'Stress testing', 'Android & iOS', 'Release readiness'],
   },
   {
-    company: 'AWaDH', fullName: 'AWaDH · AI Vicharana Shala', role: 'Teaching Assistant',
+    id: 'awadh', company: 'AWaDH', fullName: 'AWaDH · AI Vicharana Shala', role: 'Teaching Assistant',
     date: 'May — July 2024', place: 'IIT Ropar', label: 'Learning, by helping others learn.',
     summary: 'Supported participants working through machine learning, mathematics, and programming.',
     points: ['Delivered sessions and helped participants understand machine learning, linear algebra, and programming concepts.', 'Contributed front-end updates to the programme’s website.', 'Created structured learning notes in LaTeX for participants.'],
@@ -103,7 +105,7 @@ export const libraryNotes = {
   'Friedrich Nietzsche': { type: 'quote', text: 'one must still have chaos in one, to give birth to a dancing star.', attribution: 'Thus Spake Zarathustra · Prologue, §5 · translated by Thomas Common', source: 'https://www.gutenberg.org/files/1998/1998-h/1998-h.htm' },
   'Albert Camus': { type: 'quote', text: 'One must imagine Sisyphus happy.', attribution: 'The Myth of Sisyphus', source: 'https://plato.stanford.edu/entries/hope/' },
   'Adi Shankara': { type: 'question', text: 'What remains of the self when its changing descriptions fall away?' },
-  'Buddha': { type: 'quote', text: 'Hatred is never appeased by hatred in this world. By non-hatred alone is hatred appeased.', attribution: 'Dhammapada · verse 5 · translated by Acharya Buddharakkhita', source: 'https://accesstoinsight.org/tipitaka/kn/dhp/dhp.01.budd.html' },
+  'Buddha': { type: 'quote', text: 'By oneself is evil done; by oneself is one defiled. By oneself is evil left undone; by oneself is one purified.', attribution: 'Dhammapada · verse 165 · English rendering', source: 'https://accesstoinsight.org/tipitaka/kn/dhp/dhp.12.budd.html' },
   'Søren Kierkegaard': { type: 'quote', text: 'Life can only be understood backwards; but it must be lived forwards.', attribution: 'Journals · 1843 · commonly quoted paraphrase', source: 'https://wist.info/kierkegaard-soren/35849/' },
   'Marcus Aurelius': { type: 'quote', text: 'The universe is transformation: life is opinion.', attribution: 'Meditations · IV.3 · translated by George Long', source: 'https://www.gutenberg.org/files/6920/6920-h/6920-h.htm' },
   'Dante Alighieri': { type: 'quote', text: 'There is no greater sorrow than to recall happiness in times of misery.', attribution: 'Inferno · Canto V · English rendering', source: 'https://digitaldante.columbia.edu/dante/divine-comedy/inferno/inferno-5/inferno-05/' },
@@ -254,3 +256,20 @@ export const personal = {
   currentListening: 'DAMN.',
   playlistUrl: 'https://open.spotify.com/playlist/1UistN5vmQ7dtyVOB7Xh4Q?si=bab2c23a5d754bf8',
 };
+
+// Keep collections alphabetical wherever they are displayed. New entries can
+// be added above without manually maintaining their position on every page.
+profile.seeking.sort(compareText);
+projects.sort(compareBy('name'));
+experience.sort(compareBy('company'));
+community.sort(compareBy('organisation'));
+for (const groups of [skills, courses]) {
+  groups.sort(compareBy(0));
+  for (const group of groups) group.splice(1, group.length - 1, ...group.slice(1).sort(compareText));
+}
+library.sort(compareBy('category'));
+for (const group of library) group.entries.sort(compareText);
+artists.sort(compareBy('name'));
+for (const artist of artists) artist.favourites.sort(compareBy('title'));
+allTimeFavourites.sort(compareBy('title'));
+notes.sort(compareBy('title'));

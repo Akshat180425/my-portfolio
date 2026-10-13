@@ -102,5 +102,34 @@
       "All ten poetry links are available without JavaScript"
     ],
     "errors": []
+  },
+  "navigationAndCollections": {
+    "date": "2026-10-13",
+    "browser": "Chrome",
+    "basePath": "/my-portfolio",
+    "targetedChecks": [
+      "All content collections are alphabetical; all original poem stanzas unchanged; Buddha wording exact",
+      "1440px: both home experience anchors, targeted highlighting, footer/contact Gmail popups, clipboard, Library ordering and quote",
+      "390px: both home experience anchors, targeted highlighting, footer/contact Gmail popups, clipboard, Library ordering and quote",
+      "320px: both home experience anchors, targeted highlighting, footer/contact Gmail popups, clipboard, Library ordering and quote"
+    ],
+    "releaseChecks": [
+      "All 19 routes at 1440px: successful response, one main heading, poem text/stanzas, no horizontal overflow",
+      "All eight artist selections and five permanent favourites at 1440px; exact direct links, labels fit, caption clear",
+      "Poetry language filters: 10 total, 8 Hindi, 2 English at 1440px; keyboard operation works",
+      "All 19 routes at 390px: successful response, one main heading, poem text/stanzas, no horizontal overflow",
+      "All eight artist selections and five permanent favourites at 390px; exact direct links, labels fit, caption clear",
+      "Poetry language filters: 10 total, 8 Hindi, 2 English at 390px; keyboard operation works",
+      "All 19 routes at 320px: successful response, one main heading, poem text/stanzas, no horizontal overflow",
+      "All eight artist selections and five permanent favourites at 320px; exact direct links, labels fit, caption clear",
+      "Poetry language filters: 10 total, 8 Hindi, 2 English at 320px; keyboard operation works",
+      "38 distinct internal page and asset URLs resolve under /my-portfolio/",
+      "All ten PDF downloads match the repository source assets byte for byte",
+      "Sitemap and canonical URLs use the live GitHub Pages address",
+      "Hindi uses the bundled Devanagari font; approved Karan correction is present",
+      "Library keeps mythology book, search works, and Index opens/closes",
+      "All ten poetry links are available without JavaScript"
+    ],
+    "errors": []
   }
 }

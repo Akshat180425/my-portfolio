@@ -1,94 +1,56 @@
 # Akshat Bawa - Work & Wonder
 
-A personal portfolio with nine main pages and individual poetry pages, in a warm evening listening room theme. Built with HTML, CSS, browser JavaScript, and a small Node.js generator. No third-party runtime dependencies.
+*A mind for logic. A life of wonder.*
 
-## Run locally
+Welcome to my portfolio: a place for the things I build, the work I do, and the books, music, and questions that keep me company.
 
-Requires Node.js 18 or newer. There is no `npm install` step.
+**[Visit the portfolio →](https://akshat180425.github.io/my-portfolio/)**
 
-```powershell
-cd "D:\IIT\Miscellaneous\Projects\Portfolio"
+I'm a final-year Mathematics and Computing undergraduate at **IIT Ropar**, Class of 2027. I'm looking for full-time opportunities in **AI engineering, data analysis, quantitative analysis, and software development**.
+
+## Explore
+
+| Chapter | What's inside |
+| :--- | :--- |
+| [About](https://akshat180425.github.io/my-portfolio/about/) | My background, education, and interests. |
+| [Contact](https://akshat180425.github.io/my-portfolio/contact/) | A way to begin a conversation. |
+| [Experience](https://akshat180425.github.io/my-portfolio/experience/) | Professional experience and campus involvement. |
+| [Library](https://akshat180425.github.io/my-portfolio/library/) | Writers, philosophers, passages, and questions that stay. |
+| [Listening Room](https://akshat180425.github.io/my-portfolio/listening-room/) | Favourite artists, songs, and a playlist. |
+| [Marginalia](https://akshat180425.github.io/my-portfolio/marginalia/) | My original English and Hindi poems, with their PDFs. |
+| [Now](https://akshat180425.github.io/my-portfolio/now/) | The present chapter: what I'm focused on. |
+| [Projects](https://akshat180425.github.io/my-portfolio/projects/) | A closer look at a selection of my work. |
+
+## Selected projects
+
+| Project | A little context |
+| :--- | :--- |
+| [Convo](https://github.com/Akshat180425/Convo) | Real-time messaging, shared media, and a contextual AI assistant. |
+| [Ledgerly](https://github.com/Akshat180425/Ledgerly) | Personal finance, budgets, savings goals, and visual insights. |
+| [TradeScope](https://github.com/Akshat180425/TradeScope) | Educational paper trading with simulated prices, virtual funds, and portfolio analytics. |
+
+## About the website
+
+The design takes its cues from an evening listening room: warm charcoal, cream, brass, book spines, and a record on the turntable. Gentle movement and serif typography leave space for both the professional and personal parts of the site.
+
+Built with HTML, CSS, and JavaScript, using a small Node.js generator. Pages are generated as static HTML, fonts are bundled locally, and GitHub Actions publishes the site to GitHub Pages. There are no third-party runtime dependencies.
+
+To explore the code locally, use Node.js 18 or newer:
+
+```sh
+git clone https://github.com/Akshat180425/my-portfolio.git
+cd my-portfolio
 npm start
 ```
 
-Open **http://localhost:4173** in Chrome. Keep the terminal open; press **Ctrl+C** to stop.
+Open [localhost:4173](http://localhost:4173). No package installation is needed.
 
-To launch Chrome from another PowerShell window:
+For more detail, see the [development guide](docs/DEVELOPMENT.md), [editing guide](docs/EDITING.md), and [content and asset sources](docs/SOURCES.md).
 
-```powershell
-Start-Process "C:\Program Files\Google\Chrome\Application\chrome.exe" "http://localhost:4173"
-```
+## Say hello
 
-## Project structure
+For opportunities, ideas, or a shared interest: [email me](https://mail.google.com/mail/?view=cm&fs=1&to=akshatbawa130806%40gmail.com) or find me on [LinkedIn](https://www.linkedin.com/in/akshat180425/).
 
-```text
-Portfolio/
-├── src/                       Editable source code
-│   ├── config/site.mjs         Site URL and navigation
-│   ├── data/content.mjs        Profile, projects, experience, books, songs
-│   ├── data/poems.mjs          Original poems, stanzas, languages, PDF links
-│   ├── components/            Shared layout and reusable HTML helpers
-│   ├── pages/                 One template per page, plus the 404 page
-│   ├── styles/                Stylesheets and font declarations
-│   └── scripts/app.js          Browser interactions
-├── public/                    Files copied directly into the built site
-│   ├── favicon.svg
-│   └── assets/
-│       ├── images/            Project screenshots
-│       ├── fonts/             Local fonts and their licences
-│       └── poetry/            Original poetry PDFs
-├── .github/workflows/         Build and deploy GitHub Pages on main
-├── scripts/
-│   ├── build.mjs              Generates the complete dist/ folder
-│   └── serve.mjs              Serves dist/ on localhost
-├── docs/
-│   ├── EDITING.md             How to update content and appearance
-│   ├── SOURCES.md             Content and asset provenance
-│   ├── validation.json        Verification records
-│   └── archive/               Unused assets retained for reference
-├── dist/                      Generated website; do not edit manually
-├── .openai/hosting.json        Existing preview hosting configuration
-├── .gitignore
-├── package.json
-└── README.md
-```
+---
 
-## Commands
-
-| Command | Purpose |
-| --- | --- |
-| `npm start` | Rebuild the website and start the local server |
-| `npm run build` | Generate a fresh `dist/` folder |
-| `npm run preview` | Serve the existing build without rebuilding |
-| `npm run generate` | Alias for the build command |
-
-After editing while the server is running, run `npm run build` in another terminal and refresh the browser. The server does not watch source files.
-
-## Editing
-
-Begin with `src/data/content.mjs` for personal content. Each page's layout is in `src/pages/`; shared components, styles, and browser behaviour have their own folders. See [the editing guide](docs/EDITING.md).
-
-Pages: Home, About, Experience, Projects, Library, Listening Room, Marginalia, Now, and Contact. The Projects page contains Convo, Ledgerly, and TradeScope.
-
-Marginalia contains ten poems: **Hijr**, **Lost**, **Aaj Aur Kal**, **Ek Dafaa**, **Kaash**, **Karan**, **Musafir**, **Roobaroo**, **Rooh**, and **To You**. Each has a reading page and an original PDF download. Language filters help visitors browse eight Hindi and two English poems. The Hindi poems retain their original English closing passages where present. Add more poems in `src/data/poems.mjs`; the build generates their pages and sitemap entries automatically.
-
-The Listening Room has eight artists, including Radiohead, with 26 artist favourites. “Songs I come back to” is a separate, permanent selection of five all-time favourites. Akshat’s Spotify playlist is linked below.
-
-## Building for deployment
-
-Live portfolio: **https://akshat180425.github.io/my-portfolio/**.
-
-Pushing to `main` runs `.github/workflows/deploy-pages.yml`: Node.js builds the site, and GitHub Actions deploys `dist/` to GitHub Pages. The repository’s Pages publishing source is GitHub Actions. `dist/` stays generated and ignored by Git; commit the source, public assets, documentation and build scripts.
-
-The deployment sets `SITE_BASE_PATH=/my-portfolio` and `SITE_ORIGIN=https://akshat180425.github.io/my-portfolio`. Local `npm start` uses root-relative URLs, so the original localhost address still works. To check the production path locally in PowerShell:
-
-```powershell
-$env:SITE_BASE_PATH = "/my-portfolio"
-npm start
-```
-
-Open `http://localhost:4173/my-portfolio/`. Remove the override with `Remove-Item Env:SITE_BASE_PATH` before returning to normal local builds.
-
-The earlier private review site’s configuration is preserved in `.openai/hosting.json`. It is separate from GitHub Pages and is not updated by this workflow.
-
-For a different domain, update `origin` in `src/config/site.mjs` (or set `SITE_ORIGIN`) and the workflow environment. The generator uses it for canonical links, social metadata, the sitemap, and robots.txt. A host at the domain root needs an empty `SITE_BASE_PATH`.
+Original poetry and personal writing by Akshat Bawa. Quotation sources are linked alongside their entries; font licences are included with the assets.

@@ -40,6 +40,12 @@ Use Unicode Devanagari for Hindi text. AnmolHindi stores letters using legacy ch
 
 ## Page layouts and appearance
 
+Collections are displayed alphabetically: artists and their songs, all-time favourites, Library categories and names, poems, projects, experience organisations, skills, and courses. The shared comparison is in `src/utils/sort.mjs`; sorting happens when the content modules are loaded. Poem stanzas, prose, and the site's chapter navigation keep their authored order.
+
+Experience entries have stable `id` values. Home links use these to open the corresponding entry, for example `/experience/#awadh`. Preserve an existing ID when editing an organisation's display name so shared links keep working.
+
+Email actions open a Gmail compose window in a new tab, with `profile.email` filled in. Visitors can also copy the address on the Contact page. The URL helper lives in `src/components/ui.mjs`.
+
 Each page has its own template in `src/pages/`. Shared navigation, footer, and page metadata live in `src/components/layout.mjs`; small reusable elements live in `src/components/ui.mjs`.
 
 Edit `src/styles/style.css` for colours, spacing, responsive layouts, and motion. Marginalia and poem styles live in `src/styles/poetry.css`, which also declares the Hindi font and loads only on these pages. Edit `src/styles/fonts.css` for the shared font declarations. Browser interactions live in `src/scripts/app.js`.

@@ -1,10 +1,13 @@
 // Small HTML helpers and elements shared across pages.
+import { compareText } from '../utils/sort.mjs';
+
 export const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const arrow = '<span aria-hidden="true">↗</span>';
 export const right = '<span aria-hidden="true">↗</span>';
 export const external = (url, text, cls='text-link') => `<a class="${cls}" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${text} ${arrow}<span class="sr-only"> (opens in a new tab)</span></a>`;
 export const link = (url, text, cls='text-link') => `<a class="${cls}" href="${url}">${text} ${right}</a>`;
-export const tags = list => `<ul class="tags">${list.map(t=>`<li>${esc(t)}</li>`).join('')}</ul>`;
+export const gmailComposeUrl = email => `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`;
+export const tags = list => `<ul class="tags">${[...list].sort(compareText).map(t=>`<li>${esc(t)}</li>`).join('')}</ul>`;
 export const eyebrow = text => `<p class="eyebrow">${text}</p>`;
 export const pageHead = (no, label, title, desc) => `<header class="page-head wrap">${eyebrow(`${no} / ${label}`)}<h1>${title}</h1><p class="page-intro">${desc}</p></header>`;
 export const sectionHead = (kicker,title,href,label) => `<div class="section-head"><div>${eyebrow(kicker)}<h2>${title}</h2></div>${href?link(href,label):''}</div>`;

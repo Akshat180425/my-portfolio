@@ -1,5 +1,7 @@
 // Original poems by Akshat Bawa. Each array item is one stanza;
 // each string in `lines` is an intentional line break, not a browser wrap.
+import { compareBy } from '../utils/sort.mjs';
+
 export const poems = [
   {
     slug: 'hijr',
@@ -660,5 +662,8 @@ export const poems = [
     ]
   }
 ];
+
+// The collection and next-poem links share this order; stanzas stay untouched.
+poems.sort(compareBy('title'));
 
 export const poemPath = poem => `/marginalia/${poem.slug}/`;
