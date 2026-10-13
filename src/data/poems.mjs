@@ -7,7 +7,7 @@ export const poems = [
     language: 'Hindi',
     lang: 'hi',
     pdf: '/assets/poetry/hijr.pdf',
-    excerpt: ['हाँ तू जीत गई, मैं हार गया!', 'तू जा रही मेरे सपनों को कुचलते हुए मगर,'],
+    excerpt: ['हाँ तू जीत गई, मैं हार गया!', 'तू जा रही मेरे सपनों को कुचलते हुए मगर,', 'खुश रहे तू जिन भी बाहों को रखने की इजाज़त दे;'],
     // Transcribed from the author's AnmolHindi text and checked against the PDF.
     // The English closing stanzas are part of the original, not a translation.
     stanzas: [
@@ -56,7 +56,10 @@ export const poems = [
     language: 'English',
     lang: 'en',
     pdf: '/assets/poetry/lost.pdf',
-    excerpt: ['And in the quiet, their voices still linger,', 'Blooming as flowers in shadow;'],
+    excerpt: [
+      'Then, recovering a little, I go for a walk,',
+      'But my feet start following the same paths we used to walk through;'
+    ],
     stanzas: [
       { lines: [
         'Sometimes, we just find ourselves lost in some recollections,',
@@ -106,8 +109,9 @@ export const poems = [
     "lang": "hi",
     "pdf": "/assets/poetry/aaj-aur-kal.pdf",
     "excerpt": [
-      "आज की मुलाकातों और कल की यादों में,",
-      "ये आज-कल का वक़्त कुछ इस तरह बीता है;"
+      "हमारा आज भी अधूरा है, और होगा कल भी पूरा नहीं;",
+      "बस अंतर इतना ही है हमारे आज और कल में,",
+      "हम आज के आँसु छुपा नहीं सकते, और कल का प्यार आपको जता नहीं सकते।।"
     ],
     "stanzas": [
       {
@@ -207,8 +211,8 @@ export const poems = [
     "lang": "hi",
     "pdf": "/assets/poetry/ek-dafaa.pdf",
     "excerpt": [
-      "कहते हैं इश्क इबादत है,",
-      "यकीन ही रिफ़ाकत है;"
+      "कि बादलों के पीछे से जब चाँद हमारी ओर झाँक रहा था,",
+      "थे सब देख रहे - कैसे चाँदनी यामिनी को गुल्ज़ार करती,"
     ],
     "stanzas": [
       {
@@ -272,8 +276,8 @@ export const poems = [
     "lang": "hi",
     "pdf": "/assets/poetry/kaash.pdf",
     "excerpt": [
-      "काश तुम हमारा हाल पूछ लेते, हम अपने सब ग़म भुल जाते।।",
-      "भूल जाते कि क्या कुछ खोया है हमने इस सफ़र-ए-हयात में,"
+      "तुम जानते, मुस्कुराते, और शायद गले से लगाते,",
+      "काश तुम हमारा हाल पूछ लेते, हम अपने सब ग़म भुल जाते।।"
     ],
     "stanzas": [
       {
@@ -435,8 +439,8 @@ export const poems = [
     "lang": "hi",
     "pdf": "/assets/poetry/musafir.pdf",
     "excerpt": [
-      "तू न थकना, तू न रुकना, बस अडिग हो चलते रहना,",
-      "है यही जीवन मुसाफ़िर,"
+      "तेरे श्रम पे ये निर्भर है, तेरी जीत है कि हार है,",
+      "यदि हार है तो क्या तेरा प्रयास बारंबार है।"
     ],
     "stanzas": [
       {
