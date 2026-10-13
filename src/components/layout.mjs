@@ -1,0 +1,22 @@
+import { profile } from '../data/content.mjs';
+import { origin, pages, route } from '../config/site.mjs';
+import { esc, arrow, link, external } from './ui.mjs';
+
+function nav(id) {
+  return `<a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="header-inner wrap"><a class="brand" href="/" aria-label="Akshat Bawa, home"><span class="monogram">ab<span>.</span></span><span class="brand-name">Akshat Bawa</span></a><nav class="main-nav" aria-label="Primary"><a href="/projects/" ${id==='projects'?'aria-current="page"':''}>Projects</a><a href="/experience/" ${id==='experience'?'aria-current="page"':''}>Experience</a><a href="/library/" ${id==='library'?'aria-current="page"':''}>Library</a><a href="${id==='home'?'/contact/':'/listening-room/'}" ${id==='listening-room'?'aria-current="page"':''}>${id==='home'?'Contact':'Listening Room'}</a></nav><button class="index-button" type="button" aria-haspopup="dialog" aria-controls="site-index"><span>Index</span><span class="menu-icon" aria-hidden="true"><i></i><i></i></span></button></div></header>
+  <dialog id="site-index" class="index-dialog" aria-labelledby="index-title"><div class="index-shell"><div class="index-top"><a class="brand" href="/"><span class="monogram">ab<span>.</span></span><span class="brand-name">Akshat Bawa</span></a><button type="button" class="close-index" aria-label="Close site index">Close <span aria-hidden="true">×</span></button></div><div class="index-layout"><div><p class="eyebrow">A small map</p><h2 id="index-title">Every chapter.<br><em>A way in.</em></h2><p>Take your time.<br>There’s more than one place to begin.</p></div><nav aria-label="All pages">${pages.map(([key,name,sub],i)=>`<a href="${route(key)}" ${key===id?'aria-current="page"':''}><span class="index-no">0${i+1}</span><span>${name}<small>${sub}</small></span>${arrow}</a>`).join('')}</nav></div><p class="index-footer">MATHEMATICS · SOFTWARE · MUSIC · THE WRITTEN WORD</p></div></dialog>`;
+}
+
+function footer(id) {
+ const compact = id === 'contact';
+ const invitation = compact ? '' : `<div class="footer-top"><div><p class="eyebrow">The conversation continues</p><h2>Say hello<span class="gold">.</span></h2><a class="footer-email" href="mailto:${profile.email}">${profile.email} ${arrow}</a></div><div class="footer-links"><div>${link('/about/','About')}${link('/now/','Now')}${link('/contact/','Contact')}</div><div>${external(profile.github,'GitHub')}${external(profile.linkedin,'LinkedIn')}${link('/marginalia/','Marginalia')}</div></div></div>`;
+ return `<footer class="site-footer${compact ? ' site-footer-compact' : ''} wrap">${invitation}<div class="footer-bottom"><span>© 2026 Akshat Bawa</span><span>Built with intention. Always in progress.</span><a href="#top">Back to top ↑</a></div></footer>`;
+}
+
+export function shell(id,body,meta={}) {
+ const name=pages.find(p=>p[0]===id)[1];
+ const description=meta.description || (id==='home'?'Akshat Bawa. Final-year Mathematics and Computing student at IIT Ropar, exploring software, data, AI, books, and music.':`${name} — Akshat Bawa’s personal portfolio. Mathematics, software, and a life between books and music.`);
+ const title=meta.title || (id==='home'?'Akshat Bawa — Work & Wonder':`${name} — Akshat Bawa`);
+ const url=origin+(meta.path || route(id));
+ return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#1b1d19"><title>${esc(title)}</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="${esc(url)}"><meta property="og:title" content="${esc(meta.title || `${name} — Akshat Bawa`)}"><meta property="og:description" content="${esc(description)}"><meta property="og:type" content="website"><meta property="og:url" content="${esc(url)}"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/css/fonts.css"><link rel="stylesheet" href="/assets/css/style.css">${id==='marginalia'?'<link rel="stylesheet" href="/assets/css/poetry.css">':''}<script src="/assets/js/app.js" defer></script></head><body id="top" class="page-${id}">${nav(id)}<main id="main">${body}</main>${footer(id)}<p id="global-status" class="toast" role="status"></p></body></html>`;
+}

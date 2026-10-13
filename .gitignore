@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+.local/
+*.log
+
+# Generated site: recreated from src/ and public/ by npm run build.
+/dist/

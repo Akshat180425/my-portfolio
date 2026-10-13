@@ -1,0 +1,65 @@
+# Editing your portfolio
+
+- Résumé: the chosen public file is `public/assets/Resume.pdf`, linked through `profile.resume`. Replace this file or update the root-relative URL when changing it.
+- Poems: edit `src/data/poems.mjs`. See the poetry instructions below.
+- Other writing: add entries to `notes` in `src/data/content.mjs`; each entry has `title`, `category`, `date`, and a `body` array of paragraphs. These appear below the poems in Marginalia.
+- Current reading and listening: update `personal.currentReading` and `personal.currentListening`.
+- Playlist: update `personal.playlistUrl`. It becomes a link on the Listening Room page.
+- Personal introduction: update `personal.about`.
+- Library: edit `libraryNotes`, using the exact entry name as its key. Use `{ type: 'quote', text, attribution, source }` for a sourced quotation, `{ type: 'question', text }` for a reflection question, or `{ type: 'note', text }` for your own prose. Every entry opens under “What stayed with me”; search includes these notes.
+- Favourite songs: add any number of `{ title, url, note }` objects to each artist’s `favourites` array. Use the song’s direct Spotify track URL; `note` is optional. An empty array displays a space reserved for your choices.
+- All-time favourites: edit `allTimeFavourites`, using `{ title, artist, url }`. These appear in “Songs I come back to” and remain visible independently of the artist selector.
+
+The artist selector links directly to the selected artist’s Spotify profile and switches their “My favourites” song list. It does not play audio. The Alankar link goes directly to that campus role on Experience. There is no contact-form service; email links open the visitor’s email app, and Copy email copies the address.
+
+
+## Adding poems
+
+Add an entry to `poems` in `src/data/poems.mjs`. Copy one of the existing entries as a starting point:
+
+```js
+{
+  slug: 'poem-title', // Unique lowercase URL, using hyphens for spaces.
+  title: 'Poem title',
+  language: 'English', // Or 'Hindi'.
+  lang: 'en', // Use 'hi' for Hindi.
+  pdf: '/assets/poetry/poem-title.pdf',
+  excerpt: ['A short line from the poem.'],
+  stanzas: [
+    { lines: ['First line.', 'Second line.'] },
+    { lines: ['A new stanza.'] },
+  ],
+}
+```
+
+Each `lines` item represents an intentional verse line. Stanzas remain separate; long lines wrap naturally on small screens with an indented continuation. An individual stanza can use `lang: 'en'` in a Hindi poem, and `coda: true` gives a closing stanza the italic brass treatment. A differently worded excerpt is not generated automatically; select exact lines from your poem. If the excerpt language differs from the poem language, set `excerptLang`.
+
+Copy the original PDF into `public/assets/poetry/`, matching its `pdf` URL. Rebuild; the reading page, collection entry, language filter and sitemap entry are generated automatically. Poem URLs follow `/marginalia/poem-title/`. No manual navigation change is needed.
+
+Use Unicode Devanagari for Hindi text. AnmolHindi stores letters using legacy character mappings, so pasting directly from that font produces Latin characters and symbols. Hijr was transcribed to Unicode from the supplied text and visually checked against both PDF pages. The original PDF remains unchanged. The Hindi web font is Noto Serif Devanagari, bundled with its OFL licence.
+
+## Page layouts and appearance
+
+Each page has its own template in `src/pages/`. Shared navigation, footer, and page metadata live in `src/components/layout.mjs`; small reusable elements live in `src/components/ui.mjs`.
+
+Edit `src/styles/style.css` for colours, spacing, responsive layouts, and motion. Marginalia and poem styles live in `src/styles/poetry.css`, which also declares the Hindi font and loads only on these pages. Edit `src/styles/fonts.css` for the shared font declarations. Browser interactions live in `src/scripts/app.js`.
+
+Use `src/config/site.mjs` for the navigation list and canonical site URL. GitHub Pages deploys from `.github/workflows/deploy-pages.yml`; its `SITE_ORIGIN` and `SITE_BASE_PATH` environment variables select the public domain and project path. Templates and content should continue using root-relative local links; the build adds the deployment prefix automatically. If the domain changes later, update the config and workflow, then rebuild.
+
+## Images, fonts, and downloads
+
+- Project screenshots belong in `public/assets/images/`.
+- Font files and their licences belong in `public/assets/fonts/`.
+- The favicon is `public/favicon.svg`.
+- Place downloads such as your public résumé under `public/assets/`. A file at `public/assets/resume.pdf` is served at `/assets/resume.pdf`.
+- The unused first-version room illustration is preserved in `docs/archive/`; it is excluded from the generated website.
+
+The build copies everything from `public/` into the website root. Only place files intended for visitors there.
+
+## See your changes
+
+Run `npm start` to build and serve the website. To rebuild while the server is already running, run `npm run build` in a second terminal, then refresh Chrome. There is no automatic file watcher.
+
+Always edit `src/` or `public/`: the next build replaces `dist/`.
+
+See [SOURCES.md](SOURCES.md) for content provenance, asset sources, and earlier verification records.

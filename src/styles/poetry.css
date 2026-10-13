@@ -1,0 +1,74 @@
+/* Marginalia: the collection and individual reading pages. */
+@font-face {
+  font-family: 'Noto Serif Devanagari';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('../fonts/noto-serif-devanagari.ttf') format('truetype');
+}
+
+.poetry-collection { padding-bottom: 74px; }
+.poetry-tools { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; padding-bottom: 30px; }
+.poetry-tools .eyebrow { margin-bottom: 10px; }
+.poetry-tools h2 { font-size: 44px; }
+.poetry-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; }
+.poem-card { min-width: 0; background: var(--paper); color: var(--ink); }
+.poem-card-link { display: flex; flex-direction: column; height: 100%; min-height: 350px; padding: 37px 40px 24px; transition: background .25s; }
+.poem-card-link:hover { background: #eee8db; }
+.poem-card-link:focus-visible { outline-offset: 5px; }
+.poem-card .eyebrow { color: #706342; font-size: 9px; margin-bottom: 22px; }
+.poem-card h3 { font-size: 62px; font-style: italic; margin-bottom: 23px; }
+.poem-excerpt { color: #505245; font-family: var(--serif); font-size: 25px; line-height: 1.45; padding-bottom: 37px; }
+.poem-excerpt:lang(hi), .poem-stanza:lang(hi) { font-family: 'Noto Serif Devanagari', serif; font-style: normal; letter-spacing: normal; }
+.poem-excerpt:lang(hi) { font-size: 19px; line-height: 1.9; }
+.poem-card-bottom { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: auto; padding-top: 17px; border-top: 1px solid #b3b1a1; font-size: 11px; }
+.poem-card-bottom > span:last-child { font-size: 24px; transition: transform .25s; }
+.poem-card-link:hover .poem-card-bottom > span:last-child { transform: translate(3px, -3px); }
+.poem-wrap { max-width: 1000px; }
+.poem-back { margin-top: 35px; color: var(--muted); gap: 13px; }
+.poem-reading { padding-top: 50px; }
+.poem-heading { padding-bottom: 42px; border-bottom: 1px solid var(--line); margin-bottom: 47px; }
+.poem-heading .eyebrow { display: flex; flex-wrap: wrap; gap: 13px; margin-bottom: 20px; }
+.poem-heading h1 { font-size: clamp(70px, 8vw, 106px); font-style: italic; color: var(--gold); }
+.poem-byline { margin-top: 20px; font-size: 12px; color: var(--muted); }
+.poem-verses { font-family: var(--serif); font-size: 27px; line-height: 1.65; }
+.poem-stanza { color: var(--text); margin-bottom: 1.6em; }
+.poem-stanza:lang(hi) { font-size: 23px; line-height: 2.05; }
+.poem-line { display: block; padding-left: 1.25em; text-indent: -1.25em; }
+.poem-coda { font-style: italic; color: var(--gold); }
+.poem-colophon { display: flex; flex-direction: column; align-items: flex-start; gap: 35px; padding: 7px 0 55px; }
+.poem-endmark { color: var(--gold); font-size: 16px; }
+.poem-colophon .text-link { color: var(--muted); }
+.poem-navigation { display: flex; justify-content: space-between; align-items: center; gap: 35px; padding-block: 34px 48px; border-top: 1px solid var(--line); }
+.next-poem { text-align: right; }
+.next-poem .eyebrow { display: block; margin-bottom: 10px; font-size: 9px; }
+.next-poem-title { display: flex; align-items: center; justify-content: flex-end; gap: 45px; font-family: var(--serif); font-size: 36px; line-height: 1.15; }
+.next-poem-title > span { color: var(--gold); font-family: var(--sans); font-size: 23px; }
+.next-poem:hover .next-poem-title { color: var(--gold); }
+
+@media (max-width: 900px) {
+  .poem-card-link { padding: 28px 28px 21px; }
+  .poem-excerpt { font-size: 23px; }
+  .poem-verses { font-size: 25px; }
+}
+@media (max-width: 650px) {
+  .poetry-collection { padding-bottom: 40px; }
+  .poetry-tools { flex-direction: column; align-items: flex-start; gap: 22px; }
+  .poetry-tools h2 { font-size: 37px; }
+  .poetry-list { grid-template-columns: 1fr; gap: 22px; }
+  .poem-card-link { min-height: 320px; padding: 28px 26px 21px; }
+  .poem-card h3 { font-size: 56px; }
+  .poem-back { margin-top: 27px; }
+  .poem-reading { padding-top: 36px; }
+  .poem-heading { padding-bottom: 30px; margin-bottom: 32px; }
+  .poem-heading .eyebrow { font-size: 9px; gap: 10px; }
+  .poem-verses { font-size: 23px; line-height: 1.65; }
+  .poem-stanza:lang(hi) { font-size: 19px; line-height: 2; }
+  .poem-colophon { padding-bottom: 38px; gap: 25px; }
+  .poem-navigation { align-items: flex-start; flex-direction: column; gap: 32px; padding-block: 28px 35px; }
+  .next-poem { width: 100%; text-align: left; }
+  .next-poem-title { justify-content: space-between; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .poem-card-link, .poem-card-bottom > span:last-child { transition: none; }
+}

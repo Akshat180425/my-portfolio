@@ -1,0 +1,13 @@
+{
+  "name": "akshat-bawa-portfolio",
+  "private": true,
+  "type": "module",
+  "description": "Akshat Bawa's personal portfolio — Work & Wonder",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "start": "node scripts/build.mjs && node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "generate": "node scripts/build.mjs",
+    "preview": "node scripts/serve.mjs"
+  }
+}

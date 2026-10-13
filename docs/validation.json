@@ -1,0 +1,106 @@
+{
+  "passed": [
+    "/: desktop, resources, semantics",
+    "/about/: desktop, resources, semantics",
+    "/experience/: desktop, resources, semantics",
+    "/projects/: desktop, resources, semantics",
+    "/library/: desktop, resources, semantics",
+    "/listening-room/: desktop, resources, semantics",
+    "/marginalia/: desktop, resources, semantics",
+    "/now/: desktop, resources, semantics",
+    "/contact/: desktop, resources, semantics",
+    "13 internal destinations valid",
+    "Editorial homepage has no decorative generated image or image preview metadata",
+    "All 21 Library rows expand; keyboard toggle, multiple-open notes, source links and spine ornaments",
+    "Library category filter, search, empty state, reset",
+    "Library search also finds and reveals passage text",
+    "All seven artist selections update direct Spotify profiles, record labels, and personal-note panels; Lisa renamed",
+    "Alankar link lands on and highlights the exact Experience entry",
+    "Project deep link and expandable detail",
+    "Contact copy email writes expected address",
+    "Index has all nine routes; Escape closes and restores focus",
+    "All nine pages at 390px: no horizontal overflow; mobile index navigates",
+    "All nine pages at 320px: no horizontal overflow; mobile index navigates",
+    "Reduced motion respected"
+  ],
+  "errors": [],
+  "listeningRoomRevision": {
+    "passed": [
+      "1440px: all seven artists, 23 exact song links, label text contained, caption clear of disc, no overflow",
+      "1150px: all seven artists, 23 exact song links, label text contained, caption clear of disc, no overflow",
+      "900px: all seven artists, 23 exact song links, label text contained, caption clear of disc, no overflow",
+      "768px: all seven artists, 23 exact song links, label text contained, caption clear of disc, no overflow",
+      "650px: all seven artists, 23 exact song links, label text contained, caption clear of disc, no overflow",
+      "390px: all seven artists, 23 exact song links, label text contained, caption clear of disc, no overflow",
+      "320px: all seven artists, 23 exact song links, label text contained, caption clear of disc, no overflow"
+    ],
+    "errors": []
+  },
+  "folderReorganisation": {
+    "browser": "Chrome",
+    "passed": [
+      "/: loads in Chrome with working styles, fonts, scripts, and images",
+      "/about/: loads in Chrome with working styles, fonts, scripts, and images",
+      "/experience/: loads in Chrome with working styles, fonts, scripts, and images",
+      "/projects/: loads in Chrome with working styles, fonts, scripts, and images",
+      "/library/: loads in Chrome with working styles, fonts, scripts, and images",
+      "/listening-room/: loads in Chrome with working styles, fonts, scripts, and images",
+      "/marginalia/: loads in Chrome with working styles, fonts, scripts, and images",
+      "/now/: loads in Chrome with working styles, fonts, scripts, and images",
+      "/contact/: loads in Chrome with working styles, fonts, scripts, and images",
+      "Library search, artist selection, song lists, and Index dialog still work",
+      "Home and Listening Room remain responsive at 390px"
+    ],
+    "errors": [],
+    "preservation": [
+      "All 12 generated documents match the previous website apart from asset URLs.",
+      "All 19 original assets are preserved; unused artwork is archived outside the build.",
+      "npm start builds from src and public, then serves the website on localhost."
+    ]
+  },
+  "poetryRevision": {
+    "browser": "Chrome",
+    "passed": [
+      "/marginalia/ at 1440px: text, headings, fonts, navigation metadata, filters, no overflow",
+      "/marginalia/hijr/ at 1440px: text, headings, fonts, navigation metadata, filters, no overflow",
+      "/marginalia/lost/ at 1440px: text, headings, fonts, navigation metadata, filters, no overflow",
+      "/marginalia/ at 768px: text, headings, fonts, navigation metadata, filters, no overflow",
+      "/marginalia/hijr/ at 768px: text, headings, fonts, navigation metadata, filters, no overflow",
+      "/marginalia/lost/ at 768px: text, headings, fonts, navigation metadata, filters, no overflow",
+      "/marginalia/ at 390px: text, headings, fonts, navigation metadata, filters, no overflow",
+      "/marginalia/hijr/ at 390px: text, headings, fonts, navigation metadata, filters, no overflow",
+      "/marginalia/lost/ at 390px: text, headings, fonts, navigation metadata, filters, no overflow",
+      "/marginalia/ at 320px: text, headings, fonts, navigation metadata, filters, no overflow",
+      "/marginalia/hijr/ at 320px: text, headings, fonts, navigation metadata, filters, no overflow",
+      "/marginalia/lost/ at 320px: text, headings, fonts, navigation metadata, filters, no overflow",
+      "Both downloadable PDFs match the supplied originals byte for byte",
+      "Every line and punctuation mark in Lost matches raw PDF extraction",
+      "Collection → Hijr → Lost → collection links and sitemap work",
+      "Poems and links work without JavaScript; inactive filters stay hidden",
+      "Existing routes load and Library search still works after shared-layout changes"
+    ],
+    "errors": []
+  },
+  "completeCollectionAndGitHubPages": {
+    "browser": "Chrome",
+    "base": "http://127.0.0.1:4174/my-portfolio",
+    "passed": [
+      "All 19 routes at 1440px: successful response, one main heading, poem text/stanzas, no horizontal overflow",
+      "All eight artist selections and five permanent favourites at 1440px; exact direct links, labels fit, caption clear",
+      "Poetry language filters: 10 total, 8 Hindi, 2 English at 1440px; keyboard operation works",
+      "All 19 routes at 390px: successful response, one main heading, poem text/stanzas, no horizontal overflow",
+      "All eight artist selections and five permanent favourites at 390px; exact direct links, labels fit, caption clear",
+      "Poetry language filters: 10 total, 8 Hindi, 2 English at 390px; keyboard operation works",
+      "All 19 routes at 320px: successful response, one main heading, poem text/stanzas, no horizontal overflow",
+      "All eight artist selections and five permanent favourites at 320px; exact direct links, labels fit, caption clear",
+      "Poetry language filters: 10 total, 8 Hindi, 2 English at 320px; keyboard operation works",
+      "38 distinct internal page and asset URLs resolve under /my-portfolio/",
+      "All ten original PDF downloads match supplied files byte for byte",
+      "Sitemap and canonical URLs use the live GitHub Pages address",
+      "Hindi uses the bundled Devanagari font; approved Karan correction is present",
+      "Library keeps mythology book, search works, and Index opens/closes",
+      "All ten poetry links are available without JavaScript"
+    ],
+    "errors": []
+  }
+}
