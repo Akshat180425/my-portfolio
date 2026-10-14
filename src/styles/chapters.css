@@ -226,6 +226,11 @@
 .demo-gallery figure + figure { margin-top: 28px; }
 .demo-image { display: block; border: 1px solid var(--line); background: var(--surface); }
 .demo-image img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
+.demo-image img[src*="/convo-"] { object-fit: contain; object-position: center; }
+.demo-image img[src$="tradescope-market.webp"],
+.demo-image img[src$="tradescope-portfolio.webp"],
+.demo-image img[src$="tradescope-derivatives.webp"] { object-position: center; }
+.demo-image img[src$="tradescope-orders.webp"] { object-position: bottom; }
 .demo-gallery figcaption { padding: 20px 0; }
 .demo-gallery figcaption h3 { font-size: 28px; margin-bottom: 12px; }
 .demo-gallery figcaption p { margin-bottom: 12px; }
