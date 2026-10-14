@@ -94,8 +94,6 @@
 .fragment-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 .fragment-card { position: relative; min-width: 0; background: var(--surface); border: 1px solid var(--line); padding: 34px; scroll-margin-top: 35px; }
 .fragment-card:target { border-color: var(--gold); }
-.fragment-card .eyebrow { font-size: 9px; margin-bottom: 20px; }
-.fragment-card h3 { font: 500 12px/1.7 var(--sans); color: var(--muted); padding-right: 15px; margin-bottom: 20px; }
 .fragment-card blockquote { font: 29px/1.4 var(--serif); color: var(--text); margin: 0; }
 .fragment-card footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 27px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); }
 .fragment-card footer .text-link { font-size: 11px; }

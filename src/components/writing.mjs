@@ -7,7 +7,7 @@ export function poemCard(poem) {
 }
 
 export function fragmentCard(fragment, { preview = false } = {}) {
-  return `<article class="fragment-card" id="${esc(fragment.slug)}" data-entry="${esc(fragment.slug)}"><p class="eyebrow">${esc(fragment.category)}</p><h3>${esc(fragment.title)}</h3><blockquote>${esc(fragment.text)}</blockquote>${preview ? `<footer><span>Akshat Bawa</span><a class="text-link" href="${fragmentPath(fragment)}">In the margins ${arrow}</a></footer>` : `<a class="fragment-permalink" href="${fragmentPath(fragment)}" aria-label="Link to ${esc(fragment.title)}">§</a>`}</article>`;
+  return `<article class="fragment-card" id="${esc(fragment.slug)}" data-entry="${esc(fragment.slug)}"><blockquote id="${esc(fragment.slug)}-text">${esc(fragment.text)}</blockquote>${preview ? `<footer><span>Akshat Bawa</span><a class="text-link" href="${fragmentPath(fragment)}">In the margins ${arrow}</a></footer>` : `<a class="fragment-permalink" href="${fragmentPath(fragment)}" aria-label="Link to this piece" aria-describedby="${esc(fragment.slug)}-text">§</a>`}</article>`;
 }
 
 export function pagination(kind, page, count) {

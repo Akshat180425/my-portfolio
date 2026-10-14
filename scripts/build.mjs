@@ -37,7 +37,7 @@ for (const project of projects) {
   const story = caseStudies[project.id];
   detailDocument('projects', `/projects/${project.id}/`, projectPage(project, story), `${project.name} — Project study`, story.standfirst);
 }
-detailDocument('experience', '/experience/awadh/', teachingPage(), 'Teaching at AWaDH', 'My teaching assistant experience at AWaDH, with original closest-pair lecture notes and Python code.');
+detailDocument('experience', '/experience/awadh/', teachingPage(), 'Teaching at AWaDH', 'My teaching assistant experience at AWaDH, featuring my first lecture and its original closest-pair notes and Python code.');
 detailDocument('experience', '/experience/evizen-ai/', internshipPage(), 'Evizen AI & Unilic', 'My contribution to Unilic at Evizen AI: mobile quality assurance, regression testing, and release readiness.');
 for (const [kind, collection] of Object.entries(collections)) {
   const slugs = collection.entries.map(entry => entry.slug);
@@ -59,6 +59,18 @@ for (const poem of poems) {
   })]);
 }
 documents.push(['404.html', shell('home', notFoundPage())]);
+
+// Preserve links shared before collections changed from four to six per page.
+// The browser carries a piece's fragment ID to the collection, which locates it.
+for (const [oldPath, target] of [
+  ['/marginalia/poems/page/3/', '/marginalia/poems/page/2/'],
+  ['/marginalia/fragments/page/5/', '/marginalia/fragments/'],
+  ['/marginalia/fragments/page/6/', '/marginalia/fragments/'],
+]) {
+  if (documents.some(([file]) => file === `${oldPath.slice(1)}index.html`)) continue;
+  const destination = `${basePath}${target}`;
+  documents.push([`${oldPath.slice(1)}index.html`, `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>Continue reading — Akshat Bawa</title><link rel="canonical" href="${origin}${target}"><script>location.replace(${JSON.stringify(destination)} + location.search + location.hash);</script><noscript><meta http-equiv="refresh" content="0;url=${destination}"></noscript></head><body><p>This collection has a new page layout. <a href="${target}">Continue reading</a>.</p></body></html>`]);
+}
 
 fs.rmSync(dist, { recursive: true, force: true });
 fs.cpSync(path.join(root, 'public'), dist, { recursive: true });

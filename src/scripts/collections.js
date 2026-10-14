@@ -52,7 +52,7 @@
     root.querySelector('.collection-empty').hidden = matching.length !== 0;
     search.value = state.q;
     buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.collectionFilter === state.filter)));
-    status.textContent = matching.length ? `${start + 1}–${Math.min(start + size, matching.length)} of ${matching.length} · Alphabetical` : '0 matching pieces';
+    status.textContent = matching.length ? `${start + 1}–${Math.min(start + size, matching.length)} of ${matching.length}${root.dataset.collection === 'poems' ? ' · Alphabetical' : ''}` : '0 matching pieces';
     pager.replaceChildren();
     if (totalPages > 1) {
       if (state.page > 1) pager.append(pageLink(state.page - 1, '← Previous', false, 'prev'));
@@ -75,7 +75,7 @@
 
   function restore() {
     state = readState();
-    // Stable IDs still resolve after a future alphabetical insertion.
+    // Stable IDs still resolve after a future addition or reorder.
     const hash = location.hash.slice(1);
     const index = items.findIndex(item => item.slug === hash);
     if (index >= 0) { state.q = ''; state.filter = 'All'; state.page = Math.floor(index / size) + 1; }

@@ -58,14 +58,14 @@ export const projects = [
 export const experience = [
   {
     id: 'evizen-ai', company: 'Evizen AI', fullName: 'Evizen AI Private Limited', role: 'Software Development Engineer Intern',
-    date: 'May — July 2026', place: 'IIT Ropar', label: 'Quality, under pressure.',
+    date: 'May — July 2026', startDate: '2026-05', endDate: '2026-07', place: 'IIT Ropar', label: 'Quality, under pressure.',
     summary: 'Part of the team working on Unilic, a smart academic platform available on Android and iOS. My contribution focused on quality assurance and release testing.',
     points: ['Tested Android and iOS builds through functional and regression testing across successive releases.', 'Stress-tested attendance and verification workflows under concurrent classroom-scale usage and degraded conditions.', 'Tracked defects through resolution, verified fixes, and supported release readiness for the pilot launch.'],
     tags: ['Quality assurance', 'Stress testing', 'Android & iOS', 'Release readiness'],
   },
   {
     id: 'awadh', company: 'AWaDH', fullName: 'AWaDH · AI Vicharana Shala', role: 'Teaching Assistant',
-    date: 'May — July 2024', place: 'IIT Ropar', label: 'Learning, by helping others learn.',
+    date: 'May — July 2024', startDate: '2024-05', endDate: '2024-07', place: 'IIT Ropar', label: 'Learning, by helping others learn.',
     summary: 'Supported participants working through machine learning, mathematics, and programming.',
     points: ['Delivered sessions and helped participants understand machine learning, linear algebra, and programming concepts.', 'Contributed front-end updates to the programme’s website.', 'Created structured learning notes in LaTeX for participants.'],
     tags: ['Machine learning', 'Python', 'Linear algebra', 'LaTeX'],
@@ -73,9 +73,9 @@ export const experience = [
 ];
 
 export const community = [
-  { id: 'alankar', role: 'Event Coordinator', organisation: 'Alankar · The Music Club', date: 'June 2024 — May 2025' },
-  { role: 'Mentor', organisation: 'Institute Student Mentorship Program', date: 'May 2024 — July 2027' },
-  { role: 'Event Co-Head', organisation: 'Zeitgeist · The Cultural Fest', date: 'October 2024' },
+  { id: 'alankar', role: 'Event Coordinator', organisation: 'Alankar · The Music Club', date: 'June 2024 — May 2025', startDate: '2024-06', endDate: '2025-05' },
+  { role: 'Mentor', organisation: 'Institute Student Mentorship Program', date: 'May 2024 — July 2027', startDate: '2024-05', endDate: '2027-07' },
+  { role: 'Event Co-Head', organisation: 'Zeitgeist · The Cultural Fest', date: 'October 2024', startDate: '2024-10', endDate: '2024-10' },
 ];
 
 export const skills = [
@@ -257,12 +257,14 @@ export const personal = {
   playlistUrl: 'https://open.spotify.com/playlist/1UistN5vmQ7dtyVOB7Xh4Q?si=bab2c23a5d754bf8',
 };
 
-// Keep collections alphabetical wherever they are displayed. New entries can
-// be added above without manually maintaining their position on every page.
+// Keep reference collections alphabetical and experience newest first.
+// New entries are ordered consistently wherever they appear.
 profile.seeking.sort(compareText);
 projects.sort(compareBy('name'));
-experience.sort(compareBy('company'));
-community.sort(compareBy('organisation'));
+// Reverse chronology: latest end date first; start date breaks ties.
+const newestFirst = (a, b) => b.endDate.localeCompare(a.endDate) || b.startDate.localeCompare(a.startDate);
+experience.sort(newestFirst);
+community.sort(newestFirst);
 for (const groups of [skills, courses]) {
   groups.sort(compareBy(0));
   for (const group of groups) group.splice(1, group.length - 1, ...group.slice(1).sort(compareText));

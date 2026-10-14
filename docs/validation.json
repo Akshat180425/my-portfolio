@@ -164,5 +164,24 @@
       "Marginalia landing",
       "Lines that linger on desktop and mobile"
     ]
+  },
+  "writingAndChronologyRefinement": {
+    "date": "2026-10-14",
+    "contentPages": 30,
+    "pageSize": 6,
+    "fragments": 23,
+    "textAndSlugsPreserved": true,
+    "titlesRemoved": true,
+    "savedShuffledOrder": true,
+    "reverseChronology": true,
+    "firstLectureExplicit": true,
+    "legacyLinks": true,
+    "paginationSearchFiltersHistoryNoJS": true,
+    "widths": [
+      1440,
+      390,
+      320
+    ],
+    "browserErrors": []
   }
 }

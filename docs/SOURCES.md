@@ -40,7 +40,7 @@ Akshat identified Unilic as the team product at Evizen AI. Product availability 
 
 ## Lines that linger
 
-All 23 short pieces were supplied directly by Akshat. Their wording and punctuation remain intact in `src/data/fragments.mjs`. Titles, the collection name, and theme groupings are editorial additions for browsing. The Library features “Beyond the darkness” and “The measure of integrity,” both attributed to Akshat. The collection uses pagination rather than displaying all writing on the landing page.
+All 23 short pieces were supplied directly by Akshat. Their wording and punctuation remain intact in `src/data/fragments.mjs`. The collection name and theme filters are editorial additions for browsing. Individual titles and card labels were removed at Akshat’s request so the words stand on their own. The Library features the pieces beginning “I am not yet brave enough…” and “Success measures…,” both attributed to Akshat. The collection uses pagination rather than displaying all writing on the landing page.
 
 ## Assets
 
