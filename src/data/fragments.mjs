@@ -74,7 +74,7 @@ export const fragments = [
   {
     "slug": "what-i-found",
     "category": "Becoming",
-    "text": "If life ever asks what I gained from loving you, and speaks of what I lost; I will tell it who I found, within myself."
+    "text": "If life ever asks what I gained from loving you, and speaks of what I lost; I will tell it whom I found, within myself."
   },
   {
     "slug": "once-a-home",
