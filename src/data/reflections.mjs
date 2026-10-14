@@ -1,78 +1,81 @@
+import { libraryContexts } from './library-contexts.mjs';
+
 // Proposed interpretations, commissioned by Akshat for review. These are not
 // approved personal testimony or claims about an author's private intentions.
 // Set status to 'published' only after Akshat has reviewed an individual entry.
 const draft = (paragraphs, excerpt) => ({ status: 'draft', paragraphs, ...(excerpt ? { excerpt } : {}) });
+const reading = (name, paragraphs, excerpt) => ({ ...draft(paragraphs, excerpt), context: libraryContexts[name] });
 
 export const influenceReflections = {
-  'Adi Shankara': draft([
+  'Adi Shankara': reading('Adi Shankara', [
     'I read this question as an invitation to loosen my grip on the descriptions I use for myself. A role, an achievement, or a disappointment can describe part of a life without exhausting what that life is.',
-    'The metaphor I return to is a changing sky: naming each cloud does not tell me everything about the space in which it appears. This is a starting point for my reflection, not a complete account of Shankara’s philosophy.',
+    'My everyday way into this is the space between having a thought and becoming its description of me. That is a modest personal connection to a much larger metaphysical claim; it makes me more careful about treating a passing state as my whole identity.',
   ]),
-  'Albert Camus': draft([
-    'I read happiness here as a possibility within repetition, rather than a reward waiting after it. The task may not change, but the person carrying it can still have a relationship with it that is not entirely dictated by defeat.',
-    'The question this leaves me with is whether accepting a difficult reality can coexist with refusing to surrender my response to it. I would want to distinguish that acceptance from simply calling every hardship necessary.',
+  'Albert Camus': reading('Albert Camus', [
+    'What stays with me is the walk back down. The task has not become fair, but Sisyphus sees it clearly and still has an inward response of his own. I hear defiance in that happiness.',
+    'For me, the line loosens the link between meaning and a final victory. Effort can hold dignity even without a promised ending. That does not require me to call every hardship necessary or every burden worth keeping.',
   ]),
-  'Buddha': draft([
+  'Buddha': reading('Buddha', [
     'I read this passage as placing ethical responsibility close to home: in the choices I make, the habits I repeat, and the harm I can choose to stop adding.',
     'That does not mean every misfortune is deserved or under personal control. The distinction that matters to me is between being responsible for my actions and imagining I am responsible for everything that happens to me.',
   ]),
-  'Dante Alighieri': draft([
-    'Memory can sharpen an absence because it supplies the very thing the present is missing. Remembered happiness becomes both evidence that something mattered and a measure of the distance from it.',
-    'I do not read this as a reason to erase the past. I read it as a description of why gratitude and grief can arrive together, without either making the other dishonest.',
+  'Dante Alighieri': reading('Dante Alighieri', [
+    'Francesca’s remembered happiness makes absence feel precise. A memory can preserve what mattered while making its distance from the present almost unbearable. Gratitude and grief can arrive together.',
+    'Her account also makes me notice the stories people tell around their choices. I can be moved by someone’s pain and still ask what their telling leaves out. That tension gives the line more depth than a simple statement about nostalgia.',
   ], { poem: 'lost', stanza: 0, lines: [1] }),
-  'Franz Kafka': draft([
+  'Franz Kafka': reading('Franz Kafka', [
     'The doorway makes me think about permission: the permission an institution withholds, and the permission a person gradually learns to withhold from themselves. In the story, waiting becomes a life rather than a brief interruption of it.',
     'I would not reduce that to “just walk through.” Power is real. What unsettles me is how difficult it becomes to tell an external obstacle from the habits that grow around it.',
   ]),
-  'Friedrich Nietzsche': draft([
+  'Friedrich Nietzsche': reading('Friedrich Nietzsche', [
     'I read the image of a dancing star as form emerging from something unsettled. Contradiction and uncertainty may become material for creation, without making disorder valuable for its own sake.',
-    'The useful question for me is what I make from an intense feeling. Expression asks for attention and craft as well as intensity; pain alone is not a finished work.',
+    'Beside the last man, the line also makes me ask whether the comfort I seek leaves room for discovery. I want to turn an unsettled feeling into attention, craft, or a changed way of living, rather than mistake intensity itself for creation.',
   ]),
-  'Fyodor Dostoevsky': draft([
-    'This question makes me hesitate before treating one action as a complete explanation of a person. Conviction and doubt, tenderness and resentment, can exist uncomfortably close together.',
+  'Fyodor Dostoevsky': reading('Fyodor Dostoevsky', [
+    'The Underground Man makes self-awareness feel less reassuring. Being able to describe a contradiction does not necessarily free a person from it. I recognise a question worth carrying: when does explaining myself become a way to avoid changing?',
     'Understanding those contradictions need not excuse their consequences. I am interested in the space between a quick judgement and an unlimited forgiveness: the effort to understand clearly while still holding someone accountable.',
   ]),
-  'George R. R. Martin': draft([
+  'George R. R. Martin': reading('George R. R. Martin', [
     'The question separates courage from a lack of fear. If there is nothing to fear, an action may not demand the same kind of resolve.',
-    'I read it as permission to begin before feeling completely ready. The caution is that bravery still needs judgement: being afraid does not make every risk worthwhile, just as being afraid does not make every worthwhile risk impossible.',
+    'Bran’s uncertainty makes the idea feel human enough to use. I can begin before feeling completely ready, while still asking whether the action deserves courage. A difficult choice needs judgement as well as resolve.',
   ]),
-  'Homer': draft([
-    'I read home as a relationship between a place, the people in it, and the person who returns. The address may remain familiar even when the traveller no longer fits the life they left.',
-    'That makes return a kind of meeting rather than a simple reversal of departure. The question I want to hold open is whether belonging can survive change without requiring either side to pretend that nothing happened.',
+  'Homer': reading('Homer', [
+    'The rooted bed makes belonging tangible to me. What proves home is a detail held between two people, something a stranger could not reproduce simply by arriving at the right address.',
+    'I read return as a meeting between changed lives. The question I want to hold open is whether belonging can survive change without requiring either person to pretend that the years between them never happened.',
   ]),
-  'Leo Tolstoy': draft([
+  'Leo Tolstoy': reading('Leo Tolstoy', [
     'The smallness of a choice can hide its repetition. What I attend to, avoid, forgive, or postpone may shape a life more persistently than the few moments I recognise as turning points.',
-    'I read the question as a way of bringing values into an ordinary day. A principle becomes more concrete when I can ask what it changes about the next conversation or the next hour.',
+    'Gerasim gives that thought a practical form. Being present, telling the truth gently, and doing an uncomfortable task can express a value more clearly than a respectable appearance. I want to ask what my principles change about the next conversation or the next hour.',
   ]),
-  'Marcus Aurelius': draft([
+  'Marcus Aurelius': reading('Marcus Aurelius', [
     'I read the two halves together: things change, and I meet those changes through an interpretation. That interpretation can be examined even when the event itself cannot be undone.',
     'This does not make loss imaginary. It asks whether the first story I tell about an event must also be the final one. The room for agency may be small, but it is still worth noticing.',
   ]),
-  'Miguel de Cervantes': draft([
+  'Miguel de Cervantes': reading('Miguel de Cervantes', [
     'Imagination can give an ordinary life a larger horizon. It can also become a way of protecting a cherished story from whatever contradicts it.',
-    'I want to keep both possibilities in view. The question is not whether to imagine, but whether an imagined world helps me attend more carefully to the people in front of me or makes them disappear behind the roles I have assigned them.',
+    'The explanation about the enchanter is what catches me: even a collision can become evidence for the original fantasy. I want my imagination to remain answerable to other people and to what happens, with enough openness to revise a story I love.',
   ]),
-  'Oscar Wilde': draft([
+  'Oscar Wilde': reading('Oscar Wilde', [
     'The image makes hope a direction of attention rather than proof that the situation is already good. Looking upward does not erase where the speaker is standing.',
-    'I like the possibility of holding circumstance and aspiration in the same sentence. Hope feels more honest when it can acknowledge the ground beneath it, rather than requiring me to describe difficulty as something beautiful.',
+    'Knowing who speaks it keeps me attentive to the difference between beautiful language and trustworthy conduct. I can keep the upward glance while asking whether my actions deserve the generous story I tell about myself.',
   ]),
-  'Plato & Socrates': draft([
+  'Plato & Socrates': reading('Plato & Socrates', [
     'I read examination as the willingness to ask why I believe something, especially when the belief is convenient. A life can be full of activity while its reasons remain largely borrowed.',
-    'For me, the useful version of this question should lead back into living. Reflection becomes less helpful when it turns into an endless requirement to justify every feeling before allowing myself to experience it.',
+    'The trial gives that willingness a cost. It asks whether I would keep examining a belief when doing so threatens comfort or approval. I want reflection to lead back into action, with the courage to revise what I can no longer honestly defend.',
   ]),
-  'Shiv Kumar Batalvi': draft([
-    'Absence becomes tangible when language gives it a place to live: a room, a road, a repeated gesture. The missing person need not be described directly for the world around them to retain their shape.',
+  'Shiv Kumar Batalvi': reading('Shiv Kumar Batalvi', [
+    'The bird’s departure hurts because the poem has first made its presence so vivid. I read that as a lesson in how an image can carry what an explanation cannot: a missing person leaves colours, gestures, and sensations behind.',
     'This is a way I want to think about my own writing too. A particular detail can carry a feeling more patiently than an explanation of how intense that feeling is.',
   ], { poem: 'lost', stanza: 2, lines: [1] }),
-  'Søren Kierkegaard': draft([
+  'Søren Kierkegaard': reading('Søren Kierkegaard', [
     'Looking back gives events a pattern that was unavailable while they were happening. The difficulty is that decisions still have to be made before that pattern becomes clear.',
-    'I read this as a reason for humility toward earlier versions of myself. Learning from a decision is different from pretending I could have possessed all of its later meaning in advance.',
+    'The longer entry also unsettles the comfort of hindsight: my present explanation may be revised again. I read that as a reason for humility toward earlier versions of myself, and for making the next decision without demanding a certainty that living cannot supply.',
   ]),
-  'Sylvia Plath': draft([
-    'The repetition draws my attention to existence before explanation. A person does not need to produce a persuasive account of their life in order for that life to matter.',
-    'I read the rhythm as a return to something immediate and bodily. I would want to leave room for the passage’s context without turning either a fictional voice or an author’s life into a single emblem of suffering.',
+  'Sylvia Plath': reading('Sylvia Plath', [
+    'At the funeral, the rhythm feels both fragile and insistent to me. Esther’s body continues to assert a presence while she is facing another person’s absence. That makes the repetition quieter, and more moving, than a declaration of triumph.',
+    'I hear permission to begin with the fact of being here before knowing what to make of everything. A life can matter while its future remains uncertain; it does not first owe the world a complete explanation.',
   ]),
-  'William Shakespeare': draft([
+  'William Shakespeare': reading('William Shakespeare', [
     'I hear a warning about repeatedly living through an imagined ending. Fear can occupy the present long before the feared event arrives.',
     'But these are Caesar’s words in a dramatic scene, not an instruction to dismiss every warning. That tension matters: composure can become arrogance when courage is used as a reason to stop listening.',
   ]),
@@ -173,4 +176,8 @@ export const fragmentReflections = {
   ]),
 };
 
-export const reflectionSearchText = reflection => reflection?.paragraphs.join(' ') || '';
+export const reflectionSearchText = reflection => [
+  ...(reflection?.paragraphs || []),
+  reflection?.context?.work || '',
+  ...(reflection?.context?.paragraphs || []),
+].join(' ');

@@ -4,6 +4,7 @@
 - Poems: edit `src/data/poems.mjs`. See the poetry instructions below.
 - Short writing: edit `src/data/fragments.mjs`. Each entry contains a stable slug, theme, and original text. These appear untitled in **Lines that linger**. The saved order is shuffled rather than alphabetical; preserve the author's exact wording when rearranging entries.
 - Reflections: edit `src/data/reflections.mjs`. Each Library personality and original short piece has an expandable “In conversation with the words” panel. See the review instructions below.
+- Literary context: edit `src/data/library-contexts.mjs`. Each Library entry names a work, provides context paragraphs, and links the relevant text or reference under “Within the work”. “My reading” follows with the personal interpretation.
 - Project studies: edit `src/data/case-studies.mjs`. The three pages share `src/pages/project.mjs`, with separate introductions, product journeys, architecture, engineering challenges, next questions, and pinned source references.
 - Teaching and internship: edit `src/pages/teaching.mjs` and `src/pages/internship.mjs`. The original lecture files live under `public/assets/teaching/`.
 - Current reading and listening: update `personal.currentReading` and `personal.currentListening`.
@@ -56,6 +57,8 @@ Use Unicode Devanagari for Hindi text. AnmolHindi stores letters using legacy ch
 `influenceReflections` uses the exact personality name as its key; `fragmentReflections` uses the original piece's stable slug. The 41 interpretations offer possible readings of the passages. Editorial status is kept in the source data and is not displayed on the website.
 
 Revise each entry's `paragraphs` in your own voice. The `status` field is optional editorial metadata and does not affect the public presentation. The renderer is `src/components/reflection.mjs`, using native disclosure controls that also work without JavaScript.
+
+Library context is keyed by the same personality names in `library-contexts.mjs`, with `work`, `paragraphs`, and `sources` (`label` and `url`). The `reading()` helper attaches it to the corresponding interpretation. Keep factual context and personal readings distinct; questions connect to a relevant work without becoming attributed quotations. Search includes the work title and context paragraphs. Original short pieces have no external-work context, so their existing panel layout stays compact.
 
 An optional `excerpt` selects exact lines from an existing poem: `{ poem: 'lost', stanza: 0, lines: [1] }`. Stanza and line indices start at zero. The component links to the poem and fails the build if a referenced line is missing. Recheck these selections if you rearrange poem stanzas. Library search includes the interpretation paragraphs as well as the original note.
 

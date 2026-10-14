@@ -54,6 +54,33 @@ The Kafka discussion was checked against [Before the Law](https://web.mit.edu/no
 
 The decorative MYTHOLOGIES title now occupies the final tilted book. Shelf labels and ornaments were checked for separation across desktop, tablet, and mobile widths.
 
+## Literary context · October 14, 2026
+
+At Akshat's request, all 18 Library interpretations now place the quotation or question beside its literary or philosophical context. `src/data/library-contexts.mjs` stores the work, concise original summaries, and visible source links. “Within the work” provides context; “My reading” provides a personal interpretation. The original quotations and questions remain unchanged. The six questions are connected to relevant works without being attributed to their authors as direct quotations. Akshat's 23 original short pieces and their interpretations were not rewritten in this revision.
+
+The contextual readings use:
+
+- Shankara: the introduction on superimposition in the Brahma Sutra commentary, as discussed in the [Stanford Encyclopedia of Philosophy](https://plato.stanford.edu/entries/shankara/), §3.4.
+- Camus: the closing Sisyphus image and lucid revolt in The Myth of Sisyphus, checked against [Stanford's discussion](https://plato.stanford.edu/entries/camus/), §3.4.
+- Buddha: [Dhammapada, chapter 12](https://accesstoinsight.org/tipitaka/kn/dhp/dhp.12.budd.html), including the surrounding verses on conduct and practice.
+- Dante: Francesca's speech in [Inferno, Canto V](https://www.gutenberg.org/cache/epub/1001/pg1001-images.html).
+- Kafka: the waiting and final revelation in [Before the Law](https://web.mit.edu/norvin/www/somethingelse/kafka2.html).
+- Nietzsche: the dancing star beside the last man in [Zarathustra's Prologue, §5](https://www.gutenberg.org/files/1998/1998-h/1998-h.htm).
+- Dostoevsky: the invented, self-contradictory narrator of [Notes from Underground](https://www.gutenberg.org/files/600/600-h/600-h.htm).
+- Martin: Bran's introduction to judgement in the [publisher's opening-chapter excerpt](https://www.penguinrandomhouseretail.com/book/?isbn=9780553381689). The remembered exchange about courage also appears in [these educational excerpts](https://www.handbook4rspreaders.org/files/handbook-stories/Slovacka/radni_materijali/A_game_of_throne.pdf), p. 5. No additional dialogue is quoted on the portfolio.
+- Homer: Penelope's recognition through the bed in [Odyssey XXIII](https://www.theoi.com/Text/HomerOdyssey23.html).
+- Tolstoy: Ivan's conventional life in [chapter II](https://en.wikisource.org/wiki/The_Death_of_Ivan_Ilych/II) and Gerasim's care in [chapter VII](https://en.wikisource.org/wiki/The_Death_of_Ivan_Ilych/VII) of The Death of Ivan Ilych.
+- Marcus Aurelius: the inward retreat and judgement in [Meditations IV.3](https://www.gutenberg.org/files/6920/6920-h/6920-h.htm).
+- Cervantes: the windmills and subsequent explanation in [Don Quixote I.8](https://www.gutenberg.org/cache/epub/996/pg996-images.html).
+- Wilde: Lord Darlington's social conversation in [Lady Windermere's Fan, Act III](https://www.gutenberg.org/cache/epub/790/pg790-images.html).
+- Plato and Socrates: the penalty discussion in [Apology 38a](https://www.gutenberg.org/files/1656/1656-h/1656-h.htm).
+- Batalvi: the sensory presence and departure in [Shikra](https://folkpunjab.org/poetry/shiv-kumar-batalvi/shikra/), also checked in [Suman Kashyap's translations at APNA](https://apnaorg.com/wp/shiv-kumar-batalvi-suman-kashyap/). The poem's speaker is not treated as biographical evidence about the poet.
+- Kierkegaard: the longer journal entry JJ:167, commonly cited as IV A 164, reproduced with its critical-edition reference [here](https://etxt.dk/kierkegaard/citat/). The selected English wording remains identified as a paraphrase.
+- Plath: Esther's heartbeat at Joan's funeral and the uncertainty before her hospital interview in [The Bell Jar, chapter 20](https://www.gutenberg.ca/ebooks/plaths-belljar/plaths-belljar-00-h.html).
+- Shakespeare: Caesar, Calphurnia, and Decius in [Julius Caesar II.2](https://www.folger.edu/explore/shakespeares-works/julius-caesar/read/2/2/).
+
+These contexts identify speakers and scenes rather than treating every character's speech as its author's settled position. Personal responses are interpretive connections, not biographical claims. No new passages from these works are reproduced verbatim.
+
 ## Assets
 
 The homepage uses a typographic composition with no hero image. The earlier generated `docs/archive/evening-room.webp` is retained as an unused asset and is no longer referenced by the page or social preview metadata.

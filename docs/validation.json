@@ -205,5 +205,21 @@
     "date": "2026-10-14",
     "browser": "Chrome",
     "basePath": "/my-portfolio"
+  },
+  "literaryContext": {
+    "date": "2026-10-14",
+    "authorContexts": 18,
+    "originalQuotesAndQuestionsPreserved": true,
+    "originalPieceReflectionsUnchanged": 23,
+    "searchIncludesWorkContext": true,
+    "keyboardAndNoJavaScript": true,
+    "publicReviewLabelsAbsent": true,
+    "widths": [
+      1440,
+      768,
+      390,
+      320
+    ],
+    "browserErrors": []
   }
 }
