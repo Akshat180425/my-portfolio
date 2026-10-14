@@ -48,6 +48,8 @@ All 23 short pieces were supplied directly by Akshat. Their wording and punctuat
 
 Akshat explicitly requested clearly labelled draft interpretations for review. `src/data/reflections.mjs` contains 18 drafts for Library personalities and 23 for his original short pieces. “In conversation with the words” separates these proposed readings from the source text. First-person wording is proposed copy, not a claim that Akshat has approved a belief or described a personal experience. No author biography or private intention is asserted.
 
+At Akshat's subsequent request, the public editorial labels were removed; the interpretation text and poem excerpts are unchanged.
+
 The Kafka discussion was checked against [Before the Law](https://web.mit.edu/norvin/www/somethingelse/kafka2.html). The Shakespeare discussion distinguishes Caesar's speech from authorial instruction, with context checked in [Julius Caesar, Act 2, Scene 2](https://www.folger.edu/explore/shakespeares-works/julius-caesar/read/2/2/). Other drafts offer readings of the displayed passage or editorial question. Nearby excerpts from Lost and Hijr select exact lines from the existing poem data and link to the full poem; no poem wording was changed.
 
 The decorative MYTHOLOGIES title now occupies the final tilted book. Shelf labels and ornaments were checked for separation across desktop, tablet, and mobile widths.

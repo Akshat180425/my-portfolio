@@ -53,9 +53,9 @@ Use Unicode Devanagari for Hindi text. AnmolHindi stores letters using legacy ch
 
 ## Reviewing interpretations
 
-`influenceReflections` uses the exact personality name as its key; `fragmentReflections` uses the original piece's stable slug. All 41 initial entries are commissioned drafts, visibly labelled “Draft interpretation · for Akshat’s review.” They offer possible readings, not verified personal testimony or claims about an author's private intentions.
+`influenceReflections` uses the exact personality name as its key; `fragmentReflections` uses the original piece's stable slug. The 41 interpretations offer possible readings of the passages. Editorial status is kept in the source data and is not displayed on the website.
 
-Revise each entry's `paragraphs` in your own voice. Keep its status as `draft` until you have reviewed it; then use an object with `status: 'published'` to remove the draft label for that entry. Do not change the shared `draft()` helper to approve every entry at once. The renderer is `src/components/reflection.mjs`, using native disclosure controls that also work without JavaScript.
+Revise each entry's `paragraphs` in your own voice. The `status` field is optional editorial metadata and does not affect the public presentation. The renderer is `src/components/reflection.mjs`, using native disclosure controls that also work without JavaScript.
 
 An optional `excerpt` selects exact lines from an existing poem: `{ poem: 'lost', stanza: 0, lines: [1] }`. Stanza and line indices start at zero. The component links to the poem and fails the build if a referenced line is missing. Recheck these selections if you rearrange poem stanzas. Library search includes the interpretation paragraphs as well as the original note.
 

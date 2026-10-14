@@ -12,5 +12,5 @@ export function reflectionPanel(reflection) {
     if (!poem || lines.some(line => typeof line !== 'string')) throw new Error('Invalid poem excerpt in reflection.');
     excerpt = `<figure class="reflection-excerpt"><figcaption>A nearby passage · from my poem ${esc(poem.title)}</figcaption><blockquote lang="${stanza.lang || poem.lang}">${lines.map(esc).join('<br>')}</blockquote>${link(poemPath(poem), 'Read the poem')}</figure>`;
   }
-  return `<details class="word-reflection"><summary><span>In conversation with the words</span><span class="reflection-plus" aria-hidden="true">+</span></summary><div class="reflection-body">${reflection.status === 'draft' ? '<p class="reflection-draft">Draft interpretation · for Akshat’s review</p>' : ''}${reflection.paragraphs.map(p => `<p>${esc(p)}</p>`).join('')}${excerpt}</div></details>`;
+  return `<details class="word-reflection"><summary><span>In conversation with the words</span><span class="reflection-plus" aria-hidden="true">+</span></summary><div class="reflection-body">${reflection.paragraphs.map(p => `<p>${esc(p)}</p>`).join('')}${excerpt}</div></details>`;
 }

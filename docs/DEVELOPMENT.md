@@ -81,7 +81,7 @@ Marginalia contains ten poems: **Aaj Aur Kal**, **Ek Dafaa**, **Hijr**, **Kaash*
 
 The current build generates 30 content pages, three legacy pagination aliases, and a 404 page. Canonical URLs and the sitemap include the detail and collection routes. The original ten poem URLs remain unchanged.
 
-All 18 Library personalities and 23 original short pieces have “In conversation with the words” disclosures, rendered by `src/components/reflection.mjs`. Draft status remains visible until individually reviewed. Reflections participate in search; optional poem passages read directly from the original poem data. Marginalia's featured line is selected once per visit by `app.js`, with a manual “Another line” control and a static no-JavaScript fallback.
+All 18 Library personalities and 23 original short pieces have “In conversation with the words” disclosures, rendered by `src/components/reflection.mjs`. Editorial status is not displayed to visitors. Reflections participate in search; optional poem passages read directly from the original poem data. Marginalia's featured line is selected once per visit by `app.js`, with a manual “Another line” control and a static no-JavaScript fallback.
 
 The Listening Room has eight artists, including Radiohead, with 26 artist favourites. “Songs I come back to” is a separate, permanent selection of five all-time favourites. Akshat’s Spotify playlist is linked below.
 

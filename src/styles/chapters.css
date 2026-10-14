@@ -107,7 +107,6 @@
 .word-reflection[open] > summary .reflection-plus { transform: rotate(45deg); }
 .reflection-body { padding-top: 18px; }
 .reflection-body > p { font: 13px/1.9 var(--sans); color: var(--body); margin: 0 0 17px; }
-.reflection-body > .reflection-draft { color: var(--muted); font: 9px/1.7 var(--sans); letter-spacing: .055em; padding: 9px 12px; border: 1px dashed var(--line); margin-bottom: 20px; }
 .reflection-excerpt { margin: 23px 0 3px; padding: 20px 0 0 18px; border-left: 1px solid var(--gold); }
 .reflection-excerpt figcaption { font: 10px/1.6 var(--sans); color: var(--gold); margin-bottom: 15px; }
 .fragment-card .reflection-excerpt blockquote, .influence-note .reflection-excerpt blockquote { font: italic 23px/1.5 var(--serif); color: var(--body); margin: 0 0 14px; }
