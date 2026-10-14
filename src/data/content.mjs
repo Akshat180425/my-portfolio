@@ -59,7 +59,7 @@ export const experience = [
   {
     id: 'evizen-ai', company: 'Evizen AI', fullName: 'Evizen AI Private Limited', role: 'Software Development Engineer Intern',
     date: 'May — July 2026', place: 'IIT Ropar', label: 'Quality, under pressure.',
-    summary: 'Quality assurance and release testing for Unilic, a classroom attendance application.',
+    summary: 'Part of the team working on Unilic, a smart academic platform available on Android and iOS. My contribution focused on quality assurance and release testing.',
     points: ['Tested Android and iOS builds through functional and regression testing across successive releases.', 'Stress-tested attendance and verification workflows under concurrent classroom-scale usage and degraded conditions.', 'Tracked defects through resolution, verified fixes, and supported release readiness for the pilot launch.'],
     tags: ['Quality assurance', 'Stress testing', 'Android & iOS', 'Release readiness'],
   },

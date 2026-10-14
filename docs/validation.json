@@ -131,5 +131,38 @@
       "All ten poetry links are available without JavaScript"
     ],
     "errors": []
+  },
+  "projectStudiesAndWritingCollections": {
+    "pages": 33,
+    "widths": [
+      1440,
+      390,
+      320
+    ],
+    "internalLinks": 57,
+    "poems": 10,
+    "fragments": 23,
+    "originalLectureFilesPreserved": true,
+    "paginationWithoutJS": true,
+    "searchFiltersHistoryAndHashes": true,
+    "browserErrors": [],
+    "tabletWidths": [
+      768,
+      900
+    ],
+    "canonicalRoutes": 33,
+    "lectureDownloadBytesMatch": true,
+    "literalSearchInput": true,
+    "homeAwadhAnchorAndDetail": true,
+    "date": "2026-10-14",
+    "browser": "Chrome",
+    "screenshotsReviewed": [
+      "Project overview",
+      "Engineering challenges",
+      "AWaDH lecture preview and resources",
+      "Unilic team and contribution",
+      "Marginalia landing",
+      "Lines that linger on desktop and mobile"
+    ]
   }
 }

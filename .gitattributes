@@ -1,0 +1,2 @@
+# Preserve the original teaching download byte for byte across Windows and CI.
+public/assets/teaching/*.py -text

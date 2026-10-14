@@ -24,6 +24,24 @@ Lost and To You were checked against PDF text extraction and rendered pages. The
 
 Akshat confirmed “इत्तलाह” in Kaash and approved changing the visibly malformed “सफ़ाइ! धे कर” in Karan to “सफ़ाई दे कर” in the web text. The downloadable PDFs remain the unmodified originals. Other unusual source wording and spellings remain as supplied.
 
+## Project studies and experience pages · October 2026
+
+The detailed studies are original explanations based on implementation review, rather than copied README descriptions. Public source baselines:
+
+- Convo: `ca9200a4a0c3f7ca86c43ec1813fc4783174d991`.
+- Ledgerly: `98d30cdf2348bd4c029bcbb158aff3fb3060d70a`.
+- TradeScope: `58b1a0d7d1a1a057205bbc3a376f2164cb708ea0`.
+
+Each study links selected files at its baseline commit. “Engineering challenges” describes problems addressed by the implementation; it does not invent personal debugging stories or unmeasured impact. Next steps are editorial engineering suggestions. Uncommitted changes in the project checkouts were excluded. No project test suite was run as part of writing these studies; linked test definitions are supporting implementation references, not fresh pass claims.
+
+The AWaDH page uses Akshat's original `Theory Basics/PDF Files/PDF - 01.pdf` and `Theory Basics/Python Codes/Closest Pair Algorithm.py`. Both are copied byte for byte. The preview is a rendering of the PDF's first page. A small native SVG explains the cross-boundary closest-pair case; it is an illustration, not a computed output. The page distinguishes the original teaching script from the standard O(n log n) algorithm, with a [Princeton reference](https://algs4.cs.princeton.edu/code/javadoc/edu/princeton/cs/algs4/ClosestPair.html). The PDF's June 12, 2024 date is its printed date.
+
+Akshat identified Unilic as the team product at Evizen AI. Product availability and the brief academic-platform description were verified in the official [App Store listing](https://apps.apple.com/in/app/unilic/id6787115546) and [Google Play listing](https://play.google.com/store/apps/details?id=com.evizenai.unilic). His specific QA, regression, stress-testing, and release contributions come from the supplied résumé. Team product capabilities are separated from his role; no adoption or business-impact metrics are claimed.
+
+## Lines that linger
+
+All 23 short pieces were supplied directly by Akshat. Their wording and punctuation remain intact in `src/data/fragments.mjs`. Titles, the collection name, and theme groupings are editorial additions for browsing. The Library features “Beyond the darkness” and “The measure of integrity,” both attributed to Akshat. The collection uses pagination rather than displaying all writing on the landing page.
+
 ## Assets
 
 The homepage uses a typographic composition with no hero image. The earlier generated `docs/archive/evening-room.webp` is retained as an unused asset and is no longer referenced by the page or social preview metadata.
@@ -50,3 +68,5 @@ The poetry collection and both poem pages were checked in Chrome at 1440, 768, 3
 The complete ten-poem collection and music additions were checked at the GitHub Pages project path in Chrome at 1440, 390 and 320 px. All 19 routes, 38 distinct internal destinations/assets, ten original PDF hashes, eight artist selections, five permanent favourites, playlist link, language filters, canonical URLs and sitemap passed. The record label and caption remained separate for every artist. No browser errors or horizontal overflow were observed. See `completeCollectionAndGitHubPages` in `docs/validation.json`.
 
 The subsequent navigation and ordering revision was checked in Chrome at 1440, 390 and 320 px. Both Home experience links land on and highlight their matching entries. Footer and Contact email links open a new Gmail compose tab with the recipient filled in; those external destinations were intercepted during testing, without accessing an inbox. Clipboard copying, alphabetical collections, exact Buddha wording, and preservation of every poem stanza passed. All 19 routes and ten PDF downloads were also rechecked against repository assets. See `navigationAndCollections` in `docs/validation.json`.
+
+The project and writing expansion was checked in Chrome under `/my-portfolio/`: all 33 content pages at 1440, 390, and 320 px, with targeted navigation/layout checks at 768 and 900 px. The 57 distinct internal page/asset URLs and all canonical URLs passed. Checks covered paginated search across the complete collections, language/theme filters, empty/reset states, browser history, reloads, stable fragment links, no-JavaScript pagination, exact rendering of all 23 short pieces, original lecture download hashes, the AWaDH entry-to-detail path, and preservation of the mythology shelf and Buddha wording. Desktop/mobile screenshots were reviewed. No browser errors or horizontal overflow were observed. See `projectStudiesAndWritingCollections` in `docs/validation.json`.

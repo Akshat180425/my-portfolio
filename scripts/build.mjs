@@ -7,6 +7,13 @@ import { pageRenderers } from '../src/pages/index.mjs';
 import notFoundPage from '../src/pages/not-found.mjs';
 import poemPage from '../src/pages/poem.mjs';
 import { poems, poemPath } from '../src/data/poems.mjs';
+import { projects } from '../src/data/content.mjs';
+import { caseStudies } from '../src/data/case-studies.mjs';
+import { collectionSize, collectionPath } from '../src/data/fragments.mjs';
+import projectPage from '../src/pages/project.mjs';
+import teachingPage from '../src/pages/teaching.mjs';
+import internshipPage from '../src/pages/internship.mjs';
+import collectionPage, { collections } from '../src/pages/collection.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const dist = path.resolve(root, 'dist');
@@ -21,6 +28,26 @@ const documents = Object.entries(pageRenderers).map(([id, render]) => [
   id === 'home' ? 'index.html' : `${id}/index.html`,
   shell(id, render()),
 ]);
+const extraRoutes = [];
+function detailDocument(parent, url, body, title, description) {
+  documents.push([`${url.slice(1)}index.html`, shell(parent, body, { path: url, title: `${title} — Akshat Bawa`, description })]);
+  extraRoutes.push(url);
+}
+for (const project of projects) {
+  const story = caseStudies[project.id];
+  detailDocument('projects', `/projects/${project.id}/`, projectPage(project, story), `${project.name} — Project study`, story.standfirst);
+}
+detailDocument('experience', '/experience/awadh/', teachingPage(), 'Teaching at AWaDH', 'My teaching assistant experience at AWaDH, with original closest-pair lecture notes and Python code.');
+detailDocument('experience', '/experience/evizen-ai/', internshipPage(), 'Evizen AI & Unilic', 'My contribution to Unilic at Evizen AI: mobile quality assurance, regression testing, and release readiness.');
+for (const [kind, collection] of Object.entries(collections)) {
+  const slugs = collection.entries.map(entry => entry.slug);
+  if (new Set(slugs).size !== slugs.length || slugs.some(slug => !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug))) {
+    throw new Error(`Invalid or repeated slug in ${kind}.`);
+  }
+  for (let page = 1; page <= Math.ceil(collection.entries.length / collectionSize); page++) {
+    detailDocument('marginalia', collectionPath(kind, page), collectionPage(kind, page), `${collection.title}${page > 1 ? ` — Page ${page}` : ''}`, collection.description);
+  }
+}
 for (const poem of poems) {
   if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(poem.slug) || poems.filter(p => p.slug === poem.slug).length !== 1) {
     throw new Error(`Poem slugs must be unique and use lowercase words joined with hyphens: ${poem.slug}`);
@@ -47,8 +74,8 @@ for (const [file, html] of documents) {
   fs.writeFileSync(destination, output);
 }
 
-const routes = [...pages.map(([id]) => route(id)), ...poems.map(poemPath)];
+const routes = [...pages.map(([id]) => route(id)), ...poems.map(poemPath), ...extraRoutes];
 fs.writeFileSync(path.join(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${routes.map(url => `<url><loc>${origin}${url}</loc></url>`).join('')}</urlset>`);
 fs.writeFileSync(path.join(dist, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\n`);
 fs.writeFileSync(path.join(dist, '.nojekyll'), '');
-console.log(`Built ${pages.length} main pages, ${poems.length} poem pages, a 404 page, sitemap, and all assets in dist/.`);
+console.log(`Built ${routes.length} pages, a 404 page, sitemap, and all assets in dist/.`);

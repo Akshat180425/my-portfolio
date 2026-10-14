@@ -47,19 +47,6 @@
     document.querySelector('#artist-status').textContent = `${name} selected. Favourite songs updated below. Open this artist’s profile on Spotify.`;
   }));
 
-  const poetryFilters = [...document.querySelectorAll('[data-poetry-filter]')];
-  document.querySelector('.poetry-filters')?.removeAttribute('hidden');
-  poetryFilters.forEach(button => button.addEventListener('click', () => {
-    const language = button.dataset.poetryFilter;
-    let count = 0;
-    document.querySelectorAll('[data-poem-language]').forEach(poem => {
-      poem.hidden = language !== 'All' && poem.dataset.poemLanguage !== language;
-      if (!poem.hidden) count++;
-    });
-    poetryFilters.forEach(filter => filter.setAttribute('aria-pressed', String(filter === button)));
-    document.querySelector('#poetry-status').textContent = `${count} ${count === 1 ? 'poem' : 'poems'} shown${language === 'All' ? '' : ` in ${language}`}.`;
-  }));
-
   const copyButton = document.querySelector('#copy-email');
   copyButton?.addEventListener('click', async () => {
     const status = document.querySelector('#global-status');

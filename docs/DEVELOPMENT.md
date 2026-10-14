@@ -1,6 +1,6 @@
 # Development guide
 
-A personal portfolio with nine main pages and individual poetry pages, in a warm evening listening room theme. Built with HTML, CSS, browser JavaScript, and a small Node.js generator. No third-party runtime dependencies.
+A personal portfolio with nine main pages, project studies, experience pages, and original writing, in a warm evening listening room theme. Built with HTML, CSS, browser JavaScript, and a small Node.js generator. No third-party runtime dependencies.
 
 ## Run locally
 
@@ -28,17 +28,20 @@ Portfolio/
 │   ├── config/site.mjs         Site URL and navigation
 │   ├── data/content.mjs        Profile, projects, experience, books, songs
 │   ├── data/poems.mjs          Original poems, stanzas, languages, PDF links
+│   ├── data/fragments.mjs      Original short writing and collection paths
+│   ├── data/case-studies.mjs   Detailed project narratives and references
 │   ├── components/            Shared layout and reusable HTML helpers
 │   ├── pages/                 One template per page, plus the 404 page
 │   ├── styles/                Stylesheets and font declarations
 │   ├── utils/                 Shared alphabetical sorting
-│   └── scripts/app.js          Browser interactions
+│   └── scripts/               General interactions and collection browsing
 ├── public/                    Files copied directly into the built site
 │   ├── favicon.svg
 │   └── assets/
 │       ├── images/            Project screenshots
 │       ├── fonts/             Local fonts and their licences
-│       └── poetry/            Original poetry PDFs
+│       ├── poetry/            Original poetry PDFs
+│       └── teaching/          Original lecture PDF, Python code, PDF preview
 ├── .github/workflows/         Build and deploy GitHub Pages on main
 ├── scripts/
 │   ├── build.mjs              Generates the complete dist/ folder
@@ -71,9 +74,11 @@ After editing while the server is running, run `npm run build` in another termin
 
 Begin with `src/data/content.mjs` for personal content. Each page's layout is in `src/pages/`; shared components, styles, and browser behaviour have their own folders. See [the editing guide](EDITING.md).
 
-Pages: Home, About, Experience, Projects, Library, Listening Room, Marginalia, Now, and Contact. The Projects page contains Convo, Ledgerly, and TradeScope.
+Main pages: Home, About, Experience, Projects, Library, Listening Room, Marginalia, Now, and Contact. Convo, Ledgerly, and TradeScope have individual studies under `/projects/`. AWaDH and Evizen AI have pages under `/experience/`. Primary navigation consistently offers Projects, Experience, Marginalia, and Resume; the Index provides the other chapters.
 
-Marginalia contains ten poems: **Aaj Aur Kal**, **Ek Dafaa**, **Hijr**, **Kaash**, **Karan**, **Lost**, **Musafir**, **Roobaroo**, **Rooh**, and **To You**. Each has a reading page and an original PDF download. Language filters help visitors browse eight Hindi and two English poems. The Hindi poems retain their original English closing passages where present. Add more poems in `src/data/poems.mjs`; the build generates their pages and sitemap entries automatically.
+Marginalia contains ten poems: **Aaj Aur Kal**, **Ek Dafaa**, **Hijr**, **Kaash**, **Karan**, **Lost**, **Musafir**, **Roobaroo**, **Rooh**, and **To You**. Each has a reading page and an original PDF download. **Lines that linger** contains 23 original short pieces. Both collections are alphabetical, searchable, filterable, and paginated, with four entries visible per page. Static pagination works without JavaScript. The Hindi poems retain their original English closing passages where present. Add poems in `src/data/poems.mjs` and short writing in `src/data/fragments.mjs`; the build generates the required pages and sitemap entries automatically.
+
+The current build generates 33 content pages plus a 404 page. Canonical URLs and the sitemap include the detail and collection routes. The original ten poem URLs remain unchanged.
 
 The Listening Room has eight artists, including Radiohead, with 26 artist favourites. “Songs I come back to” is a separate, permanent selection of five all-time favourites. Akshat’s Spotify playlist is linked below.
 

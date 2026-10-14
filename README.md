@@ -14,20 +14,25 @@ I'm a final-year Mathematics and Computing undergraduate at **IIT Ropar**, Class
 | :--- | :--- |
 | [About](https://akshat180425.github.io/my-portfolio/about/) | My background, education, and interests. |
 | [Contact](https://akshat180425.github.io/my-portfolio/contact/) | A way to begin a conversation. |
-| [Experience](https://akshat180425.github.io/my-portfolio/experience/) | Professional experience and campus involvement. |
+| [Experience](https://akshat180425.github.io/my-portfolio/experience/) | Professional experience, teaching materials, and my contribution to Unilic. |
 | [Library](https://akshat180425.github.io/my-portfolio/library/) | Writers, philosophers, passages, and questions that stay. |
 | [Listening Room](https://akshat180425.github.io/my-portfolio/listening-room/) | Favourite artists, songs, and a playlist. |
-| [Marginalia](https://akshat180425.github.io/my-portfolio/marginalia/) | My original English and Hindi poems, with their PDFs. |
+| [Marginalia](https://akshat180425.github.io/my-portfolio/marginalia/) | Original English and Hindi poems, and **Lines that linger**: short pieces on love, becoming, and self-respect. |
 | [Now](https://akshat180425.github.io/my-portfolio/now/) | The present chapter: what I'm focused on. |
-| [Projects](https://akshat180425.github.io/my-portfolio/projects/) | A closer look at a selection of my work. |
+| [Projects](https://akshat180425.github.io/my-portfolio/projects/) | Detailed project studies, technical choices, and engineering challenges. |
+| [Resume](https://akshat180425.github.io/my-portfolio/assets/Resume.pdf) | My public résumé, as a PDF. |
 
 ## Selected projects
 
 | Project | A little context |
 | :--- | :--- |
-| [Convo](https://github.com/Akshat180425/Convo) | Real-time messaging, shared media, and a contextual AI assistant. |
-| [Ledgerly](https://github.com/Akshat180425/Ledgerly) | Personal finance, budgets, savings goals, and visual insights. |
-| [TradeScope](https://github.com/Akshat180425/TradeScope) | Educational paper trading with simulated prices, virtual funds, and portfolio analytics. |
+| [Convo](https://akshat180425.github.io/my-portfolio/projects/convo/) | Real-time messaging, shared media, and a contextual AI assistant. |
+| [Ledgerly](https://akshat180425.github.io/my-portfolio/projects/ledgerly/) | Personal finance, budgets, savings goals, and visual insights. |
+| [TradeScope](https://akshat180425.github.io/my-portfolio/projects/tradescope/) | Educational paper trading with simulated prices, virtual funds, and portfolio analytics. |
+
+Each study walks through the product, how its parts connect, and the problems its implementation addresses. Source repositories are linked from the pages.
+
+My [AWaDH teaching page](https://akshat180425.github.io/my-portfolio/experience/awadh/) includes the original PDF and Python code for a lecture on the closest-pair problem. The [Unilic page](https://akshat180425.github.io/my-portfolio/experience/evizen-ai/) describes my work on mobile testing and release readiness at Evizen AI.
 
 ## About the website
 
