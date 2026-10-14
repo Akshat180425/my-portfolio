@@ -74,6 +74,16 @@ After editing while the server is running, run `npm run build` in another termin
 
 ## Editing
 
+### Evidence and sharing checks
+
+After building, run `npm run check` to verify generated local links and assets, canonical URLs, social metadata, and gallery fallbacks. For a GitHub Pages build, keep `SITE_BASE_PATH` set to `/my-portfolio` for both build and check. The check currently covers 34 HTML files and sharing metadata for all 30 content pages.
+
+The lecture companion is in `public/assets/teaching/`. Run its tests with Python 3.10+ from that folder: `python -B -m unittest -v test_closest_pair.py`. The 12 test methods include 1,000 fixed-seed random comparisons and 502 exhaustive grid subsets. The original hyphenated Python filename remains an unchanged archive; the revised file uses `closest_pair.py`.
+
+The static site needs no Python packages. Regenerating the PDF requires ReportLab (`python scripts/generate-teaching-companion.py`); regenerating the social image requires Pillow (`python scripts/generate-share-card.py`). Both use the bundled fonts. Review the rendered output after regeneration. Asset authoring does not run during deployment.
+
+Project screenshots, provenance, test results, and reproduction commands live in `src/data/project-evidence.mjs`. Update the date and revision when recording new results. These are correctness results, not performance benchmarks. Gallery controls are manually operated, keyboard accessible, and leave all frames visible without JavaScript. Main-page descriptions live in `src/data/page-meta.mjs`; detail pages supply their own descriptions.
+
 Begin with `src/data/content.mjs` for personal content. Each page's layout is in `src/pages/`; shared components, styles, and browser behaviour have their own folders. See [the editing guide](EDITING.md).
 
 Main pages: Home, About, Experience, Projects, Library, Listening Room, Marginalia, Now, and Contact. Convo, Ledgerly, and TradeScope have individual studies under `/projects/`. AWaDH and Evizen AI have pages under `/experience/`. Primary navigation consistently offers Projects, Experience, Marginalia, and Resume; the Index provides the other chapters.

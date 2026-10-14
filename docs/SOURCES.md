@@ -84,7 +84,15 @@ These contexts identify speakers and scenes rather than treating every character
 ## Assets
 
 The homepage uses a typographic composition with no hero image. The earlier generated `docs/archive/evening-room.webp` is retained as an unused asset and is no longer referenced by the page or social preview metadata.
-Project screenshots: `public/assets/images/convo.png`, `ledgerly.png`, and `tradescope.png`, from the respective public repositories.
+Project overview screenshots for Convo and Ledgerly come from their public repositories. TradeScope's overview was replaced with a local capture of the populated paper-trading account on 15 October 2026.
+
+### Project evidence and teaching companion (14–15 October 2026)
+
+- Convo gallery: `Screenshots/Home Page - No Chat Selected.png`, `Home Page - Chat Container.png`, and `Settings Page.png`, exported from revision `ca9200a4a0c3f7ca86c43ec1813fc4783174d991` and converted to WebP. These are existing repository captures, not newly recorded demonstrations of every current feature.
+- Ledgerly gallery: `docs/screenshots/dashboard-desktop.png`, `transactions.png`, and `analytics.png`, from revision `98d30cdf2348bd4c029bcbb158aff3fb3060d70a`. They contain example records. The backend's 19 tests passed against an isolated temporary MongoDB database on 14 October.
+- TradeScope gallery: browser captures of a local development workspace on 14–15 October, after adding three stock holdings, a pending limit order, and one call option. Money, prices, and performance are simulated. The local version includes newer risk/journal navigation; the recorded 39-test result belongs to published revision `58b1a0d7d1a1a057205bbc3a376f2164cb708ea0`, run from an isolated source snapshot. No real-market performance claims are made.
+- The corrected closest-pair implementation and tests are new companion materials; the original lecture PDF and Python file are unchanged. The [Princeton reference](https://algs4.cs.princeton.edu/code/javadoc/edu/princeton/cs/algs4/ClosestPair.html) and [source implementation](https://algs4.cs.princeton.edu/code/edu/princeton/cs/algs4/ClosestPair.java.html) provide further reading for the standard divide-and-conquer algorithm. The companion accepts integer coordinates, returns one closest pair, and documents its numerical and complexity assumptions.
+- `social-preview.png` is an original typographic composition using the site's bundled fonts and palette. Its reproducible authoring script is `scripts/generate-share-card.py`; no generated photograph or third-party illustration is used.
 Fonts: Cormorant Garamond and Manrope, stored locally with their OFL licences in `public/assets/fonts/`. Hindi poetry uses Noto Serif Devanagari from the [Google Fonts repository](https://github.com/google/fonts/tree/main/ofl/notoserifdevanagari), also stored locally with its OFL licence. AnmolHindi itself is not redistributed as a web font.
 Record and book illustrations are native CSS, with no extra image downloads.
 

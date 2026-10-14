@@ -221,5 +221,53 @@
       320
     ],
     "browserErrors": []
+  },
+  "evidenceAndCompanion": {
+    "date": "2026-10-15",
+    "contentPages": 30,
+    "htmlFiles": 34,
+    "localReferences": 1161,
+    "responsiveWidths": [
+      320,
+      390,
+      768,
+      1440
+    ],
+    "responsivePages": [
+      "library",
+      "projects/convo",
+      "projects/ledgerly",
+      "projects/tradescope",
+      "experience/awadh"
+    ],
+    "horizontalOverflow": false,
+    "sharingImage": [
+      1200,
+      630
+    ],
+    "tests": {
+      "date": "2026-10-14",
+      "closestPair": {
+        "passed": 12,
+        "randomInputs": 1000,
+        "exhaustiveGridSubsets": 502
+      },
+      "ledgerly": {
+        "passed": 19,
+        "revision": "98d30cdf2348bd4c029bcbb158aff3fb3060d70a"
+      },
+      "tradescope": {
+        "passed": 39,
+        "revision": "58b1a0d7d1a1a057205bbc3a376f2164cb708ea0"
+      }
+    },
+    "notes": [
+      "Original lecture PDF and Python unchanged",
+      "Companion PDF: all three rendered pages visually reviewed",
+      "Gallery switching and revised-code keyboard disclosure checked in browser",
+      "Source galleries remain visible without JavaScript; fallback markup checked",
+      "TradeScope captures use sample paper trades in the local development version",
+      "No throughput or latency benchmark claimed"
+    ]
   }
 }

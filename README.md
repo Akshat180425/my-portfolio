@@ -32,7 +32,7 @@ I'm a final-year Mathematics and Computing undergraduate at **IIT Ropar**, Class
 
 Each study walks through the product, how its parts connect, and the problems its implementation addresses. Source repositories are linked from the pages.
 
-My [AWaDH teaching page](https://akshat180425.github.io/my-portfolio/experience/awadh/) includes the original PDF and Python code for a lecture on the closest-pair problem. The [Unilic page](https://akshat180425.github.io/my-portfolio/experience/evizen-ai/) describes my work on mobile testing and release readiness at Evizen AI.
+My [AWaDH teaching page](https://akshat180425.github.io/my-portfolio/experience/awadh/) includes the original material from my first lecture, plus a corrected closest-pair companion with downloadable Python and reproducible tests. The [Unilic page](https://akshat180425.github.io/my-portfolio/experience/evizen-ai/) describes my work on mobile testing and release readiness at Evizen AI.
 
 ## About the website
 

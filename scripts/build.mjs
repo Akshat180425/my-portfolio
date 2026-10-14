@@ -37,7 +37,7 @@ for (const project of projects) {
   const story = caseStudies[project.id];
   detailDocument('projects', `/projects/${project.id}/`, projectPage(project, story), `${project.name} — Project study`, story.standfirst);
 }
-detailDocument('experience', '/experience/awadh/', teachingPage(), 'Teaching at AWaDH', 'My teaching assistant experience at AWaDH, featuring my first lecture and its original closest-pair notes and Python code.');
+detailDocument('experience', '/experience/awadh/', teachingPage(), 'Teaching at AWaDH', 'My first lecture at AWaDH: original notes, a corrected closest-pair companion, and Python code with reproducible tests.');
 detailDocument('experience', '/experience/evizen-ai/', internshipPage(), 'Evizen AI & Unilic', 'My contribution to Unilic at Evizen AI: mobile quality assurance, regression testing, and release readiness.');
 for (const [kind, collection] of Object.entries(collections)) {
   const slugs = collection.entries.map(entry => entry.slug);
@@ -45,7 +45,7 @@ for (const [kind, collection] of Object.entries(collections)) {
     throw new Error(`Invalid or repeated slug in ${kind}.`);
   }
   for (let page = 1; page <= Math.ceil(collection.entries.length / collectionSize); page++) {
-    detailDocument('marginalia', collectionPath(kind, page), collectionPage(kind, page), `${collection.title}${page > 1 ? ` — Page ${page}` : ''}`, collection.description);
+    detailDocument('marginalia', collectionPath(kind, page), collectionPage(kind, page), `${collection.title}${page > 1 ? ` — Page ${page}` : ''}`, collection.description + ` Page ${page} of ${Math.ceil(collection.entries.length / collectionSize)}.`);
   }
 }
 for (const poem of poems) {
@@ -73,7 +73,10 @@ for (const [oldPath, target] of [
 }
 
 fs.rmSync(dist, { recursive: true, force: true });
-fs.cpSync(path.join(root, 'public'), dist, { recursive: true });
+fs.cpSync(path.join(root, 'public'), dist, {
+  recursive: true,
+  filter: source => path.basename(source) !== '__pycache__' && !source.endsWith('.pyc'),
+});
 fs.cpSync(path.join(root, 'src/styles'), path.join(dist, 'assets/css'), { recursive: true });
 fs.cpSync(path.join(root, 'src/scripts'), path.join(dist, 'assets/js'), { recursive: true });
 

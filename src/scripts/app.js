@@ -71,6 +71,22 @@
     document.querySelector('#artist-status').textContent = `${name} selected. Favourite songs updated below. Open this artist’s profile on Spotify.`;
   }));
 
+  // All frames remain available when JavaScript is disabled.
+  document.querySelectorAll('[data-demo-gallery]').forEach(gallery => {
+    const buttons = [...gallery.querySelectorAll('[data-demo-select]')];
+    const frames = [...gallery.querySelectorAll('[data-demo-frame]')];
+    const select = index => {
+      frames.forEach((frame, i) => { frame.hidden = i !== index; });
+      buttons.forEach((button, i) => button.setAttribute('aria-pressed', String(i === index)));
+    };
+    buttons.forEach((button, index) => button.addEventListener('click', () => {
+      select(index);
+      gallery.querySelector('[data-demo-status]').textContent = 'Screen ' + (index + 1) + ' of ' + frames.length + ': ' + frames[index].querySelector('h3').textContent;
+    }));
+    select(0);
+    gallery.querySelector('.demo-controls').hidden = false;
+  });
+
   const copyButton = document.querySelector('#copy-email');
   copyButton?.addEventListener('click', async () => {
     const status = document.querySelector('#global-status');
