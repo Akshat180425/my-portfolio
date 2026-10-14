@@ -49,6 +49,9 @@
     state.page = Math.min(state.page, totalPages);
     const start = (state.page - 1) * size;
     results.replaceChildren(...matching.slice(start, start + size).map(item => templates.get(item.slug).cloneNode(true)));
+    if (query) results.querySelectorAll('.word-reflection').forEach(reflection => {
+      if (reflection.querySelector('.reflection-body').textContent.toLocaleLowerCase().includes(query)) reflection.open = true;
+    });
     root.querySelector('.collection-empty').hidden = matching.length !== 0;
     search.value = state.q;
     buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.collectionFilter === state.filter)));

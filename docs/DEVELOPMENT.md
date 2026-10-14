@@ -29,6 +29,7 @@ Portfolio/
 │   ├── data/content.mjs        Profile, projects, experience, books, songs
 │   ├── data/poems.mjs          Original poems, stanzas, languages, PDF links
 │   ├── data/fragments.mjs      Original short writing and collection paths
+│   ├── data/reflections.mjs    Reviewable interpretations and poem selections
 │   ├── data/case-studies.mjs   Detailed project narratives and references
 │   ├── components/            Shared layout and reusable HTML helpers
 │   ├── pages/                 One template per page, plus the 404 page
@@ -79,6 +80,8 @@ Main pages: Home, About, Experience, Projects, Library, Listening Room, Marginal
 Marginalia contains ten poems: **Aaj Aur Kal**, **Ek Dafaa**, **Hijr**, **Kaash**, **Karan**, **Lost**, **Musafir**, **Roobaroo**, **Rooh**, and **To You**. Each has a reading page and an original PDF download. **Lines that linger** contains 23 original short pieces. Both collections are searchable, filterable, and paginated, with six entries visible per page. Poems are alphabetical; short pieces have a saved shuffled order and no individual titles. Static pagination works without JavaScript. The Hindi poems retain their original English closing passages where present. Add poems in `src/data/poems.mjs` and short writing in `src/data/fragments.mjs`; the build generates the required pages and sitemap entries automatically.
 
 The current build generates 30 content pages, three legacy pagination aliases, and a 404 page. Canonical URLs and the sitemap include the detail and collection routes. The original ten poem URLs remain unchanged.
+
+All 18 Library personalities and 23 original short pieces have “In conversation with the words” disclosures, rendered by `src/components/reflection.mjs`. Draft status remains visible until individually reviewed. Reflections participate in search; optional poem passages read directly from the original poem data. Marginalia's featured line is selected once per visit by `app.js`, with a manual “Another line” control and a static no-JavaScript fallback.
 
 The Listening Room has eight artists, including Radiohead, with 26 artist favourites. “Songs I come back to” is a separate, permanent selection of five all-time favourites. Akshat’s Spotify playlist is linked below.
 

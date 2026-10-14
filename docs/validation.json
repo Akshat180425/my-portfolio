@@ -183,5 +183,27 @@
       320
     ],
     "browserErrors": []
+  },
+  "reflectionsAndFeaturedWriting": {
+    "draftReflections": 41,
+    "influenceEntries": 18,
+    "originalPieces": 23,
+    "fourLibrarySelections": true,
+    "randomFeaturedLineAndButton": true,
+    "categoriesRestored": true,
+    "songReplacementVerified": true,
+    "shelfFitsAt": [
+      1440,
+      900,
+      768,
+      390,
+      320
+    ],
+    "searchAndNoJavaScriptReading": true,
+    "originalWordsPreserved": true,
+    "browserErrors": [],
+    "date": "2026-10-14",
+    "browser": "Chrome",
+    "basePath": "/my-portfolio"
   }
 }

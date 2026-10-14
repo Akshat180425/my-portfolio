@@ -24,6 +24,9 @@
         const details = item.querySelector('details');
         if (!show && details) details.open = false;
         if (show && query && !item.dataset.name.includes(query) && details) details.open = true;
+        const reflection = item.querySelector('.word-reflection');
+        if (!show && reflection) reflection.open = false;
+        if (show && query && reflection?.querySelector('.reflection-body').textContent.toLocaleLowerCase().includes(query)) reflection.open = true;
         if (show) visible++;
       });
       group.hidden = visible === 0;
@@ -36,6 +39,27 @@
   filters.forEach(button => button.addEventListener('click', () => { currentFilter = button.dataset.filter; updateLibrary(); }));
   search?.addEventListener('input', updateLibrary);
   document.querySelector('#reset-library')?.addEventListener('click', () => { currentFilter = 'All'; search.value = ''; updateLibrary(); search.focus(); });
+
+  // Choose once per visit, never on a timer while someone is reading.
+  const featuredSlot = document.querySelector('[data-featured-slot]');
+  const featuredTemplate = document.querySelector('[data-featured-lines]');
+  if (featuredSlot && featuredTemplate) {
+    const cards = [...featuredTemplate.content.children];
+    let previous = '';
+    try { previous = sessionStorage.getItem('marginalia-last-line') || ''; } catch {}
+    const pickLine = (announce = false) => {
+      const candidates = cards.filter(card => card.dataset.featuredLine !== previous);
+      const choice = (candidates.length ? candidates : cards)[Math.floor(Math.random() * (candidates.length || cards.length))];
+      if (!choice) return;
+      previous = choice.dataset.featuredLine;
+      featuredSlot.replaceChildren(choice.cloneNode(true));
+      try { sessionStorage.setItem('marginalia-last-line', previous); } catch {}
+      if (announce) document.querySelector('[data-featured-status]').textContent = choice.querySelector('blockquote').textContent;
+    };
+    pickLine();
+    const next = document.querySelector('[data-next-line]');
+    if (next) { next.hidden = false; next.addEventListener('click', () => pickLine(true)); }
+  }
 
   document.querySelectorAll('[data-artist]').forEach(button => button.addEventListener('click', () => {
     const name = button.dataset.artistName;

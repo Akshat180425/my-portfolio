@@ -3,6 +3,7 @@
 - Résumé: the chosen public file is `public/assets/Resume.pdf`, linked through `profile.resume`. Replace this file or update the root-relative URL when changing it.
 - Poems: edit `src/data/poems.mjs`. See the poetry instructions below.
 - Short writing: edit `src/data/fragments.mjs`. Each entry contains a stable slug, theme, and original text. These appear untitled in **Lines that linger**. The saved order is shuffled rather than alphabetical; preserve the author's exact wording when rearranging entries.
+- Reflections: edit `src/data/reflections.mjs`. Each Library personality and original short piece has an expandable “In conversation with the words” panel. See the review instructions below.
 - Project studies: edit `src/data/case-studies.mjs`. The three pages share `src/pages/project.mjs`, with separate introductions, product journeys, architecture, engineering challenges, next questions, and pinned source references.
 - Teaching and internship: edit `src/pages/teaching.mjs` and `src/pages/internship.mjs`. The original lecture files live under `public/assets/teaching/`.
 - Current reading and listening: update `personal.currentReading` and `personal.currentListening`.
@@ -40,19 +41,27 @@ Copy the original PDF into `public/assets/poetry/`, matching its `pdf` URL. Rebu
 
 ## Browsing a growing collection
 
-Marginalia's landing page features Hijr, Lost, and one selected short piece. The full collections are `/marginalia/poems/` and `/marginalia/fragments/`. They generate six entries per page, with further routes such as `/marginalia/poems/page/2/`. All entries remain reachable through ordinary links without JavaScript.
+Marginalia's landing page features Hijr, Lost, and one randomly selected short piece per visit. “Another line” lets readers choose again; nothing changes on a timer. Session storage avoids an immediate repeat, and a static fallback remains readable without JavaScript. The full collections are `/marginalia/poems/` and `/marginalia/fragments/`. They generate six entries per page, with further routes such as `/marginalia/poems/page/2/`. All entries remain reachable through ordinary links without JavaScript.
 
-Search and theme/language filters search the entire collection, including poem body text. They update the URL, preserve filtered pagination on reload, and support browser Back/Forward. `collectionSize` in `fragments.mjs` controls page size; the browser reads it from the generated markup. `fragmentPath()` calculates links to a piece's current page in the saved shuffled order. Keep slugs stable when rearranging pieces. Poem titles remain alphabetical. Old pagination links are preserved by aliases in the build script.
+Search and theme/language filters search the entire collection, including poem body text and short-piece reflection paragraphs. A reflection matching the query opens automatically. They update the URL, preserve filtered pagination on reload, and support browser Back/Forward. `collectionSize` in `fragments.mjs` controls page size; the browser reads it from the generated markup. `fragmentPath()` calculates links to a piece's current page in the saved shuffled order. Keep slugs stable when rearranging pieces. Poem titles remain alphabetical. Old pagination links are preserved by aliases in the build script.
 
-The Library selects two fragments by slug in `src/pages/library.mjs`; they are clearly attributed to Akshat and remain separate from the authors and philosophers. Change those selected slugs to feature different pieces. The cards share the source text rather than duplicating it.
+The Library selects four fragments by slug in `src/pages/library.mjs`: `choose-your-fire`, `love-and-the-right-decision`, `beyond-the-darkness`, and `two-kinds-of-waiting`. They are clearly attributed to Akshat and remain separate from the authors and philosophers. Change those selected slugs to feature different pieces. The cards share the source text and reflection rather than duplicating them.
 
 Collection markup is in `src/pages/collection.mjs` and `src/components/writing.mjs`. The browser controller is `src/scripts/collections.js`. Full card templates make filtering immediate; search queries are treated as text, never HTML. For a very large archive, a separate search index could replace the embedded collection data.
 
 Use Unicode Devanagari for Hindi text. AnmolHindi stores letters using legacy character mappings, so pasting directly from that font produces Latin characters and symbols. Hijr was transcribed to Unicode from the supplied text and visually checked against both PDF pages. The original PDF remains unchanged. The Hindi web font is Noto Serif Devanagari, bundled with its OFL licence.
 
+## Reviewing interpretations
+
+`influenceReflections` uses the exact personality name as its key; `fragmentReflections` uses the original piece's stable slug. All 41 initial entries are commissioned drafts, visibly labelled “Draft interpretation · for Akshat’s review.” They offer possible readings, not verified personal testimony or claims about an author's private intentions.
+
+Revise each entry's `paragraphs` in your own voice. Keep its status as `draft` until you have reviewed it; then use an object with `status: 'published'` to remove the draft label for that entry. Do not change the shared `draft()` helper to approve every entry at once. The renderer is `src/components/reflection.mjs`, using native disclosure controls that also work without JavaScript.
+
+An optional `excerpt` selects exact lines from an existing poem: `{ poem: 'lost', stanza: 0, lines: [1] }`. Stanza and line indices start at zero. The component links to the poem and fails the build if a referenced line is missing. Recheck these selections if you rearrange poem stanzas. Library search includes the interpretation paragraphs as well as the original note.
+
 ## Page layouts and appearance
 
-Reference collections are displayed alphabetically: artists and their songs, all-time favourites, Library categories and names, poems, projects, skills, and courses. Short writing uses a saved shuffled order, without individual titles. Professional experience and campus roles use reverse chronology, ordered by `endDate` and then `startDate` (ISO year-month values); the latest roles come first. The shared comparison is in `src/utils/sort.mjs`; sorting happens when the content modules are loaded. Poem stanzas, prose, and the site's chapter navigation keep their authored order.
+Reference collections are displayed alphabetically: artists and their songs, all-time favourites, Library categories and names, poems, projects, skills, and courses. Short writing uses a saved shuffled order, without individual titles; category labels use restrained brass, rose, and sage accents in `chapters.css`. Professional experience and campus roles use reverse chronology, ordered by `endDate` and then `startDate` (ISO year-month values); the latest roles come first. The shared comparison is in `src/utils/sort.mjs`; sorting happens when the content modules are loaded. Poem stanzas, prose, and the site's chapter navigation keep their authored order.
 
 Experience entries have stable `id` values. Home links still open the corresponding entry, for example `/experience/#awadh`. Each entry links to its detailed page, `/experience/awadh/` or `/experience/evizen-ai/`. Preserve existing IDs and paths so shared links keep working.
 

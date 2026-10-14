@@ -13,6 +13,8 @@ Author, philosophy, and artist interests were supplied by Akshat. All 26 artist 
 Favourite-song links were checked against Spotify track metadata. “Tere Liye” uses the Prince recording, “Aadat” uses the Kalyug recording, and “FXCK UP THE WORLD” uses the album version featuring Future. The displayed “Tere Vaastey” spelling reflects Akshat’s subsequent edit.
 
 Radiohead’s artist profile and Let Down, Creep, and Paranoid Android links were verified against Spotify. The supplied [My Songs playlist](https://open.spotify.com/playlist/1UistN5vmQ7dtyVOB7Xh4Q) confirms the linked versions of Perfect (Ed Sheeran), My Way (Frank Sinatra, 2008 remaster), Creep, Let Down, and Winning Speech. Counting Stars uses OneRepublic’s standard 4:17 recording, verified in the official artist embed; Paranoid Android uses the 6:27 OK Computer album recording. All new track and artist URLs also passed Spotify oEmbed title checks.
+
+On October 14, Akshat replaced Winning Speech in the permanent all-time selection with [Vanjhali Vaja by Amrinder Gill](https://open.spotify.com/track/1o4LauuyjZXLIL5srdqBqr), verified against Spotify's Angrej soundtrack listing. Winning Speech remains among Karan Aujla's artist-specific favourites.
 Library notes contain twelve selected quotations and six original reflection questions. Akshat supplied the wording for Camus, Kierkegaard, Dante, Kafka, Plath, Shakespeare, and Martin; that wording and punctuation are preserved. Sources are linked underneath each quote. Kierkegaard’s familiar wording is identified as a paraphrase of the 1843 journal entry, and Dante’s as an English rendering of Inferno, Canto V. Plath’s source uses commas where Akshat selected full stops. The mythology category was removed at Akshat’s request. The decorative MYTHOLOGIES book remains on the shelf, as clarified by Akshat.
 Marginalia now features Akshat’s own poems instead of the blank notebook and Hamlet quotation.
 
@@ -40,7 +42,15 @@ Akshat identified Unilic as the team product at Evizen AI. Product availability 
 
 ## Lines that linger
 
-All 23 short pieces were supplied directly by Akshat. Their wording and punctuation remain intact in `src/data/fragments.mjs`. The collection name and theme filters are editorial additions for browsing. Individual titles and card labels were removed at Akshat’s request so the words stand on their own. The Library features the pieces beginning “I am not yet brave enough…” and “Success measures…,” both attributed to Akshat. The collection uses pagination rather than displaying all writing on the landing page.
+All 23 short pieces were supplied directly by Akshat. Their wording and punctuation remain intact in `src/data/fragments.mjs`, including his correction from “who” to “whom” in “If life ever asks…”. The collection name and theme filters are editorial additions for browsing. Individual titles remain absent; category labels were restored at Akshat's request with muted colour accents. The Library now features exactly the four requested pieces beginning “Walk through the fire…”, “Love may explain…”, “I am not yet brave enough…”, and “You waited for the moon…”, all attributed to Akshat. Both writing collections retain six entries per page. The landing page chooses a short piece randomly per visit, with a manual next-line control and no timed changes.
+
+## Draft interpretations · October 14, 2026
+
+Akshat explicitly requested clearly labelled draft interpretations for review. `src/data/reflections.mjs` contains 18 drafts for Library personalities and 23 for his original short pieces. “In conversation with the words” separates these proposed readings from the source text. First-person wording is proposed copy, not a claim that Akshat has approved a belief or described a personal experience. No author biography or private intention is asserted.
+
+The Kafka discussion was checked against [Before the Law](https://web.mit.edu/norvin/www/somethingelse/kafka2.html). The Shakespeare discussion distinguishes Caesar's speech from authorial instruction, with context checked in [Julius Caesar, Act 2, Scene 2](https://www.folger.edu/explore/shakespeares-works/julius-caesar/read/2/2/). Other drafts offer readings of the displayed passage or editorial question. Nearby excerpts from Lost and Hijr select exact lines from the existing poem data and link to the full poem; no poem wording was changed.
+
+The decorative MYTHOLOGIES title now occupies the final tilted book. Shelf labels and ornaments were checked for separation across desktop, tablet, and mobile widths.
 
 ## Assets
 
@@ -58,6 +68,8 @@ Archived prompt for the unused first-version image:
 All nine routes were checked in Microsoft Edge at 1440 px desktop and at 390 px and 320 px mobile widths. Checks covered successful image loading, one main heading per page, internal links and project anchors, horizontal overflow, Library search/filter/empty/reset states, keyboard-operable Library notes, searching within notes, all seven artist selections and direct Spotify profile destinations, the Alankar anchor, expandable project details, clipboard copying, Index navigation and Escape focus restoration, and reduced-motion support. No browser JavaScript errors were observed. See `docs/validation.json` for the latest results.
 
 External live project applications and third-party services are outside this site’s deployment and may have their own availability limits.
+
+The reflection revision was checked in Chrome at 1440, 900, 768, 390, and 320 px under the GitHub Pages project path. Checks covered all 41 draft panels, keyboard and no-JavaScript reading, search within reflections, exact original writing, six-entry pagination, four Library selections, featured-line randomisation and links, category labels, the song replacement, shelf geometry, and horizontal overflow. No browser JavaScript errors were observed. See `reflectionsAndFeaturedWriting` in `docs/validation.json`.
 
 The Buddha quotation was updated to wording supplied by Akshat, with a reference to [Dhammapada, verse 165](https://accesstoinsight.org/tipitaka/kn/dhp/dhp.12.budd.html). Its attribution says “English rendering” because English translations vary.
 

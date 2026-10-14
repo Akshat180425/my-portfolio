@@ -1,3 +1,5 @@
+import { fragmentReflections } from '../data/reflections.mjs';
+import { reflectionPanel } from './reflection.mjs';
 import { esc, arrow } from './ui.mjs';
 import { poemPath } from '../data/poems.mjs';
 import { collectionPath, fragmentPath } from '../data/fragments.mjs';
@@ -7,7 +9,7 @@ export function poemCard(poem) {
 }
 
 export function fragmentCard(fragment, { preview = false } = {}) {
-  return `<article class="fragment-card" id="${esc(fragment.slug)}" data-entry="${esc(fragment.slug)}"><blockquote id="${esc(fragment.slug)}-text">${esc(fragment.text)}</blockquote>${preview ? `<footer><span>Akshat Bawa</span><a class="text-link" href="${fragmentPath(fragment)}">In the margins ${arrow}</a></footer>` : `<a class="fragment-permalink" href="${fragmentPath(fragment)}" aria-label="Link to this piece" aria-describedby="${esc(fragment.slug)}-text">§</a>`}</article>`;
+  return `<article class="fragment-card" id="${esc(fragment.slug)}" data-entry="${esc(fragment.slug)}" data-category="${esc(fragment.category)}"><p class="fragment-category">${esc(fragment.category)}</p><blockquote id="${esc(fragment.slug)}-text">${esc(fragment.text)}</blockquote>${reflectionPanel(fragmentReflections[fragment.slug])}${preview ? `<footer><span>Akshat Bawa</span><a class="text-link" href="${fragmentPath(fragment)}">In the margins ${arrow}</a></footer>` : `<a class="fragment-permalink" href="${fragmentPath(fragment)}" aria-label="Link to this piece" aria-describedby="${esc(fragment.slug)}-text">§</a>`}</article>`;
 }
 
 export function pagination(kind, page, count) {

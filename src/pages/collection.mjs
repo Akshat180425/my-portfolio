@@ -1,3 +1,4 @@
+import { fragmentReflections, reflectionSearchText } from '../data/reflections.mjs';
 import { poems } from '../data/poems.mjs';
 import { fragments, collectionSize, collectionPath } from '../data/fragments.mjs';
 import { esc } from '../components/ui.mjs';
@@ -6,7 +7,7 @@ import { compareText } from '../utils/sort.mjs';
 
 export const collections = {
   poems: { title: 'Poems', subtitle: 'A little of what<br><em>words can hold.</em>', description: 'Original poems in English and Hindi. Read them here, or keep their original PDFs.', entries: poems, render: poemCard, category: p => p.language, search: p => `${p.title} ${p.stanzas.map(s => s.lines.join(' ')).join(' ')}`, filterLabel: 'language' },
-  fragments: { title: 'Lines that linger', subtitle: 'Some thoughts arrive<br><em>a few lines at a time.</em>', description: 'On love, becoming, and the quiet work of self-respect. Short pieces from my own margins.', entries: fragments, render: fragmentCard, category: f => f.category, search: f => f.text, filterLabel: 'theme' },
+  fragments: { title: 'Lines that linger', subtitle: 'Some thoughts arrive<br><em>a few lines at a time.</em>', description: 'On love, becoming, and the quiet work of self-respect. Short pieces from my own margins.', entries: fragments, render: fragmentCard, category: f => f.category, search: f => `${f.text} ${reflectionSearchText(fragmentReflections[f.slug])}`, filterLabel: 'theme' },
 };
 
 export default function collectionPage(kind, page = 1) {

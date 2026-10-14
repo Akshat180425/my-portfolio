@@ -95,6 +95,32 @@
 .fragment-card { position: relative; min-width: 0; background: var(--surface); border: 1px solid var(--line); padding: 34px; scroll-margin-top: 35px; }
 .fragment-card:target { border-color: var(--gold); }
 .fragment-card blockquote { font: 29px/1.4 var(--serif); color: var(--text); margin: 0; }
+.fragment-card { --category-tone: #d0b88a; }
+.fragment-card[data-category="Love & longing"] { --category-tone: #cfaaa1; }
+.fragment-card[data-category="Self-respect"] { --category-tone: #b3c1a6; }
+.fragment-category { color: var(--category-tone); font-size: 10px; line-height: 1.5; letter-spacing: .1em; text-transform: uppercase; padding-left: 12px; border-left: 2px solid var(--category-tone); margin-bottom: 24px; }
+.word-reflection { margin-top: 25px; padding-top: 16px; border-top: 1px solid var(--line); }
+.word-reflection > summary { display: flex; justify-content: space-between; align-items: center; gap: 16px; color: var(--body); font: 11px/1.6 var(--sans); cursor: pointer; list-style: none; padding-block: 7px; }
+.word-reflection > summary::-webkit-details-marker { display: none; }
+.word-reflection > summary:hover { color: var(--gold); }
+.reflection-plus { color: var(--gold); font-size: 20px; flex-shrink: 0; transition: transform .2s ease; }
+.word-reflection[open] > summary .reflection-plus { transform: rotate(45deg); }
+.reflection-body { padding-top: 18px; }
+.reflection-body > p { font: 13px/1.9 var(--sans); color: var(--body); margin: 0 0 17px; }
+.reflection-body > .reflection-draft { color: var(--muted); font: 9px/1.7 var(--sans); letter-spacing: .055em; padding: 9px 12px; border: 1px dashed var(--line); margin-bottom: 20px; }
+.reflection-excerpt { margin: 23px 0 3px; padding: 20px 0 0 18px; border-left: 1px solid var(--gold); }
+.reflection-excerpt figcaption { font: 10px/1.6 var(--sans); color: var(--gold); margin-bottom: 15px; }
+.fragment-card .reflection-excerpt blockquote, .influence-note .reflection-excerpt blockquote { font: italic 23px/1.5 var(--serif); color: var(--body); margin: 0 0 14px; }
+.reflection-excerpt .text-link { font-size: 10px; }
+.marginalia-excerpt .wrap > .featured-slot { display: block; }
+.featured-slot figure { margin: 0; }
+.featured-credit { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; font-size: 12px; }
+.marginalia-excerpt .wrap > .featured-controls { margin-top: 24px; }
+.featured-next { background: none; border: 0; border-bottom: 1px solid #7b776950; color: var(--ink); cursor: pointer; }
+.featured-next:hover { color: #655339; border-color: #655339; }
+.library-shelf .book { padding-block: 24px 50px; }
+.library-shelf .book > span { line-height: 1; }
+.library-shelf .b7 > span { letter-spacing: .08em; }
 .fragment-card footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 27px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); }
 .fragment-card footer .text-link { font-size: 11px; }
 .fragment-permalink { display: inline-flex; justify-content: center; align-items: center; width: 35px; height: 35px; color: var(--gold); font: 22px var(--serif); margin-top: 25px; border: 1px solid var(--line); }
@@ -135,6 +161,7 @@
   .fragment-card { padding: 25px; }
 }
 @media (max-width: 650px) {
+  .library-shelf .book { padding-block: 16px 32px; }
   .header-inner { display: grid; grid-template-columns: 1fr auto; height: auto; min-height: 115px; padding-block: 17px 13px; gap: 12px 20px; }
   .header-inner .brand { grid-column: 1; grid-row: 1; }
   .header-inner .index-button { grid-column: 2; grid-row: 1; margin: 0; }

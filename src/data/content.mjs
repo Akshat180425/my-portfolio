@@ -243,7 +243,7 @@ export const allTimeFavourites = [
   { title: 'My Way', artist: 'Frank Sinatra', url: 'https://open.spotify.com/track/2YkIDPL5lGhRhomCq4S2RO' },
   { title: 'Creep', artist: 'Radiohead', url: 'https://open.spotify.com/track/70LcF31zb1H0PyJoS1Sx1r' },
   { title: 'Counting Stars', artist: 'OneRepublic', url: 'https://open.spotify.com/track/2tpWsVSb9UEmDRxAl1zhX1' },
-  { title: 'Winning Speech', artist: 'Karan Aujla', url: 'https://open.spotify.com/track/3FqtduiaqnFYvBgKuc6QWQ' },
+  { title: 'Vanjhali Vaja', artist: 'Amrinder Gill', url: 'https://open.spotify.com/track/1o4LauuyjZXLIL5srdqBqr' },
 ];
 
 // Add original writing when ready. Keep [] to show only the poetry collection.
