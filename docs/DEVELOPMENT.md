@@ -70,7 +70,6 @@ Portfolio/
 | `npm run preview` | Serve the existing build without rebuilding |
 | `npm run generate` | Alias for the build command |
 | `npm run check` | Check generated links, assets, and page metadata |
-| `node --test scripts/motion.test.mjs` | Test reveal lifecycle, reduced motion, focus, deep links, and collection updates |
 
 After editing while the server is running, run `npm run build` in another terminal and refresh the browser. The server does not watch source files.
 

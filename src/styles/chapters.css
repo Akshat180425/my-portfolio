@@ -266,12 +266,3 @@
   .demo-controls button { min-height: 44px; }
   .demo-gallery figcaption h3 { font-size: 25px; }
 }
-
-/* Content is readable immediately. Disclosures and artist changes settle softly. */
-@media (prefers-reduced-motion: no-preference) {
-  .influence-details[open] > .influence-note,
-  .word-reflection[open] > .reflection-body { animation: quiet-open .18s ease-out; }
-  .artist-notes:not([hidden]) { animation: quiet-arrival .28s var(--ease); }
-  @keyframes quiet-open { from { opacity: .78; } to { opacity: 1; } }
-  @keyframes quiet-arrival { from { opacity: .78; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
-}

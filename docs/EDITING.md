@@ -17,7 +17,7 @@
 
 The artist selector links directly to the selected artist’s Spotify profile and switches their “My favourites” song list. It does not play audio. The Alankar link goes directly to that campus role on Experience. There is no contact-form service; email links open Gmail compose, and Copy email copies the address.
 
-Subtle motion lives in `src/scripts/app.js` and the final rules of `src/styles/chapters.css`. Section headings settle once as they enter view; reflection openings and artist changes have short transitions. Content is visible without JavaScript, and the system reduced-motion preference disables these effects, including a preference change during an active animation.
+Content appears immediately, without scroll reveals or entrance animations. Reflection panels open and artist selections update directly. Standard hover and focus feedback remains available.
 
 
 ## Adding poems
@@ -78,14 +78,6 @@ Each page has its own template in `src/pages/`. Shared navigation, footer, and p
 Edit `src/styles/style.css` for the original colours, spacing, responsive layouts, and motion. Marginalia and poem styles live in `src/styles/poetry.css`, which also declares the Hindi font and loads only on these pages. New detail pages, writing collections, and the mobile navigation row use `src/styles/chapters.css`. Edit `src/styles/fonts.css` for shared font declarations. General browser interactions live in `src/scripts/app.js`.
 
 Every page's primary menu contains Projects, Experience, Marginalia, and Resume. The Resume destination uses `profile.resume`; the Index keeps the other main pages discoverable.
-
-### Scroll motion
-
-`src/scripts/motion.mjs` animates text only. Headings have a clear upward entrance; body copy rises a shorter distance; author and artist names ease sideways; poems and quotations fade without moving their lines. Images, card backgrounds, book spines, the record, borders, and controls stay still. Entrances take roughly 0.8–1.1 seconds, with short staggered delays for neighbouring text. Reveals run once per element per visit. Writing collections remember the heading, excerpt, or quotation separately when filtering or changing pages, using the `portfolio:collection-rendered` event from `collections.js`.
-
-Content is visible by default, including without JavaScript or animation support. Reduced-motion preferences disable scroll effects and cancel any already running. Keyboard focus, direct section links, and printing show related content immediately. Mobile uses shorter distances and delays. Keep controls and primary actions stable; avoid animating nested containers and their contents together. Run `node --test scripts/motion.test.mjs` after changing the motion controller, then check actual scrolling on desktop and mobile.
-
-The shared layout adds a content hash to the motion script URL at build time, so a new deployment refreshes browsers' cached copy automatically.
 
 Use `src/config/site.mjs` for the navigation list and canonical site URL. GitHub Pages deploys from `.github/workflows/deploy-pages.yml`; its `SITE_ORIGIN` and `SITE_BASE_PATH` environment variables select the public domain and project path. Templates and content should continue using root-relative local links; the build adds the deployment prefix automatically. If the domain changes later, update the config and workflow, then rebuild.
 

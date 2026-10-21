@@ -1,22 +1,4 @@
 (() => {
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const runningMotion = new Map();
-  const settle = element => {
-    if (!element?.animate || reducedMotion.matches) return;
-    runningMotion.get(element)?.cancel();
-    const animation = element.animate([
-      { opacity: .78, transform: 'translateY(5px)' },
-      { opacity: 1, transform: 'translateY(0)' },
-    ], { duration: 280, easing: 'cubic-bezier(.22,1,.36,1)' });
-    runningMotion.set(element, animation);
-    animation.onfinish = () => runningMotion.delete(element);
-  };
-  reducedMotion.addEventListener('change', event => {
-    if (!event.matches) return;
-    runningMotion.forEach(animation => animation.cancel());
-    runningMotion.clear();
-  });
-
   const dialog = document.querySelector('#site-index');
   const openIndex = document.querySelector('.index-button');
   openIndex?.addEventListener('click', () => {
@@ -85,8 +67,6 @@
     document.querySelectorAll('[data-artist]').forEach(other => other.setAttribute('aria-pressed', String(other === button)));
     document.querySelector('#record-artist').textContent = name;
     document.querySelector('#artist-name').textContent = name;
-    settle(document.querySelector('#record-artist'));
-    settle(document.querySelector('#artist-name'));
     document.querySelector('#artist-link').href = button.dataset.spotify;
     document.querySelectorAll('[data-artist-notes]').forEach(panel => { panel.hidden = panel.dataset.artistNotes !== button.dataset.artist; });
     document.querySelector('#artist-status').textContent = `${name} selected. Favourite songs updated below. Open this artist’s profile on Spotify.`;
