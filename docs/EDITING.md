@@ -79,6 +79,12 @@ Edit `src/styles/style.css` for the original colours, spacing, responsive layout
 
 Every page's primary menu contains Projects, Experience, Marginalia, and Resume. The Resume destination uses `profile.resume`; the Index keeps the other main pages discoverable.
 
+### Scroll motion
+
+`src/scripts/motion.mjs` defines the reveal targets and pacing for each page. Projects and room cards rise in short sequences; experience and Library rows ease sideways; images and the book shelf lift gently; poems fade without moving their lines. Reveals run once per element per visit. Writing collections remember already-seen pieces when filtering or changing pages, using the `portfolio:collection-rendered` event from `collections.js`.
+
+Content is visible by default, including without JavaScript or animation support. Reduced-motion preferences disable scroll effects and cancel any already running. Keyboard focus, direct section links, and printing show related content immediately. Mobile uses shorter distances and delays. Keep controls and primary actions stable; avoid animating nested containers and their contents together. Run `node --test scripts/motion.test.mjs` after changing the motion controller, then check actual scrolling on desktop and mobile.
+
 Use `src/config/site.mjs` for the navigation list and canonical site URL. GitHub Pages deploys from `.github/workflows/deploy-pages.yml`; its `SITE_ORIGIN` and `SITE_BASE_PATH` environment variables select the public domain and project path. Templates and content should continue using root-relative local links; the build adds the deployment prefix automatically. If the domain changes later, update the config and workflow, then rebuild.
 
 ## Images, fonts, and downloads

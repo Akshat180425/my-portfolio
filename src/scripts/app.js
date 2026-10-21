@@ -11,21 +11,8 @@
     runningMotion.set(element, animation);
     animation.onfinish = () => runningMotion.delete(element);
   };
-  let headingObserver;
-  if (!reducedMotion.matches && 'IntersectionObserver' in window) {
-    headingObserver = new IntersectionObserver(entries => {
-      for (const entry of entries) {
-        if (!entry.isIntersecting) continue;
-        headingObserver.unobserve(entry.target);
-        settle(entry.target);
-      }
-    }, { threshold: .2 });
-    document.querySelectorAll('.section-head, .library-group-title, .all-time-heading, .reading-note > div:first-child')
-      .forEach(heading => headingObserver.observe(heading));
-  }
   reducedMotion.addEventListener('change', event => {
     if (!event.matches) return;
-    headingObserver?.disconnect();
     runningMotion.forEach(animation => animation.cancel());
     runningMotion.clear();
   });

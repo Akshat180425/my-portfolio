@@ -74,6 +74,7 @@
     }
     if (historyMode) history[historyMode]({}, '', pageUrl(state.page));
     if (focus) { title.focus({ preventScroll: true }); title.scrollIntoView({ block: 'start' }); }
+    document.dispatchEvent(new CustomEvent('portfolio:collection-rendered'));
   }
 
   function restore() {
