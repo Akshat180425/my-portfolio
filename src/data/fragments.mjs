@@ -17,11 +17,6 @@ export const fragments = [
     "text": "Sometimes, nothing happens at all, and that is precisely what brings everything back."
   },
   {
-    "slug": "peaceful-nights",
-    "category": "Love & longing",
-    "text": "I will make myself a stranger to your days if that is what it takes to keep your nights peaceful."
-  },
-  {
     "slug": "keep-walking",
     "category": "Becoming",
     "text": "Keep walking, not because the road promises an end, but because your purpose deserves the effort."
@@ -82,19 +77,9 @@ export const fragments = [
     "text": "I can make peace with not being your destination without pretending you were never my home."
   },
   {
-    "slug": "the-cost-of-returning",
-    "category": "Self-respect",
-    "text": "Let the world believe I lost you; I know what it cost me to stop losing myself."
-  },
-  {
     "slug": "a-distance-i-can-survive",
     "category": "Self-respect",
     "text": "I have learnt how to love you from a distance that my dignity can survive."
-  },
-  {
-    "slug": "a-world-of-reminders",
-    "category": "Love & longing",
-    "text": "I can distract my mind from missing you, but I cannot teach the world to stop reminding me that you were here."
   },
   {
     "slug": "one-impossible-second",

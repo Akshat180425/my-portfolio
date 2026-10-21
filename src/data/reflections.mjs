@@ -94,10 +94,6 @@ export const fragmentReflections = {
     'An empty moment can give memory the space that activity had occupied. The return is not always triggered by an anniversary or a dramatic encounter; sometimes the interruption is simply silence.',
     'I would like this line to leave room for that ordinary rhythm of remembering. A quiet day can still be full of an earlier life.',
   ], { poem: 'lost', stanza: 0, lines: [0] }),
-  'peaceful-nights': draft([
-    'The line imagines distance as a form of care. Becoming a stranger is not the same as suddenly feeling nothing; it is an action taken while the feeling is still present.',
-    'The question I would keep beside it is where generosity ends and self-erasure begins. Another person’s peace matters, but the speaker’s existence should not have to become an apology.',
-  ], { poem: 'hijr', stanza: 2, lines: [2] }),
   'keep-walking': draft([
     'The road offers no guarantee here. Continuing is grounded in the worth of the purpose, rather than a promise that effort will be rewarded on schedule.',
     'I would not want persistence to mean refusing rest or refusing a better route. The purpose can remain while the pace, method, or direction changes.',
@@ -146,18 +142,10 @@ export const fragmentReflections = {
     'A destination belongs to a future; a home may belong to a past that was still real. The sentence makes room to relinquish one without falsifying the other.',
     'I read it as a form of truthful separation. Moving forward does not require declaring that a place never sheltered me, even if I can no longer live there.',
   ]),
-  'the-cost-of-returning': draft([
-    'The visible loss is the relationship. The less visible cost is the version of the self that had been disappearing inside it.',
-    'I would want this to express self-recovery rather than a contest over who suffered more. The decision can remain necessary even when the world never receives a complete explanation of it.',
-  ]),
   'a-distance-i-can-survive': draft([
     'Distance is measured here by what it allows the speaker to retain. Love may continue, but the form in which it is lived has to leave room for dignity.',
     'I read this as an adjustment of access rather than a performance of indifference. The feeling is not denied; it is given a boundary within which a person can keep being themselves.',
   ]),
-  'a-world-of-reminders': draft([
-    'Private effort meets a public world that has kept its associations. A place, a song, or an ordinary question can bring back what deliberate distraction had temporarily quietened.',
-    'The line is interested in that difference of scale. The mind can choose its next task more easily than it can renegotiate the meaning of every familiar thing.',
-  ], { poem: 'lost', stanza: 1, lines: [1] }),
   'one-impossible-second': draft([
     'A small gesture interrupts the ordinary measurement of time. Eternity is personified so that the scale of the feeling can exceed the scale of the event.',
     'I would leave the moment small rather than explain it into a declaration. Its force comes from how briefly attention makes the rest of the world seem to pause.',
