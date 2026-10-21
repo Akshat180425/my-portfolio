@@ -1,5 +1,5 @@
 // Progressive enhancement: nothing is hidden in CSS or while waiting to enter view.
-// Different chapters share a small vocabulary, with their own pacing and targets.
+// Only text enters: imagery, cards, borders, and controls stay in place.
 export function initMotion(doc, view) {
   if (!view.IntersectionObserver || !view.Element?.prototype.animate) return () => {};
   const reduced = view.matchMedia('(prefers-reduced-motion: reduce)');
@@ -14,68 +14,63 @@ export function initMotion(doc, view) {
   const plan = (selector, kind = 'rise', stagger = 0) => selectors.push({ selector, kind, stagger });
   plan('.page-head h1, .detail-heading h1, .collection-heading h1, .poem-heading h1', 'title');
   plan('.page-head .page-intro, .detail-heading .detail-deck, .detail-heading .detail-intro, .collection-heading .page-intro, .poem-byline', 'fade');
-  plan('.section-head, .poetry-tools, .detail-prose > section > h2, .reading-note > div:first-child', 'heading');
-  plan('.detail-facts > div, .journey-list > li, .architecture-flow > li', 'rise', 65);
-  plan('.detail-prose > section > p, .related-work, .project-end > p, .footer-top h2', 'fade');
-  plan('.challenge-list > article', 'rise', 70);
-  plan('.detail-screenshot, .demo-gallery, .lecture-preview, .closest-pair-figure, .evidence-result', 'frame');
-  plan('.teaching-introduction, .unilic-intro > div', 'rise', 70);
+  plan('.section-head h2, .poetry-tools h2, .detail-prose > section > h2, .reading-note h2, .footer-top h2', 'heading');
+  plan('.detail-facts > div > p, .journey-list h3, .architecture-flow h3', 'rise', 90);
+  plan('.detail-prose > section > p:not(.eyebrow), .journey-list p, .architecture-flow p, .project-end > p, .section-description', 'rise', 65);
+  plan('.challenge-list h3, .teaching-introduction h2, .unilic-intro h2, .evidence-result h3', 'heading');
+  plan('.challenge-list p, .teaching-introduction > p:not(.eyebrow), .unilic-intro p:not(.eyebrow), .evidence-result > p:not(.eyebrow)', 'rise', 65);
 
   const profiles = {
     home() {
       plan('.hero-copy h1', 'title');
-      plan('.hero-intro, .now-teaser > p', 'fade');
-      plan('.project-grid > .project-card, .rooms-grid > .room-card', 'lift', 85);
-      plan('.experience-teaser > div:first-child', 'heading');
-      plan('.compact-experience > a', 'row', 65);
+      plan('.hero-intro, .now-teaser > p', 'rise');
+      plan('.project-card h3, .room-card h3', 'heading', 110);
+      plan('.project-card > p, .room-card > p', 'rise', 110);
+      plan('.experience-teaser h2', 'heading');
+      plan('.compact-experience strong, .compact-experience small', 'row', 80);
     },
     about() {
-      plan('.identity-panel', 'frame');
-      plan('.about-body > p', 'fade', 45);
-      plan('.education-main', 'row');
-      plan('.education-secondary > div, .course-grid > div', 'rise', 65);
-      plan('.personal-space', 'fade');
+      plan('.about-body > p', 'rise', 80);
+      plan('.education-main h3, .education-secondary h3, .course-grid h3, .personal-space h2', 'heading', 90);
+      plan('.education-main p, .education-secondary p, .course-grid li, .personal-space > p:not(.eyebrow)', 'rise', 65);
     },
     experience() {
-      plan('.timeline-meta', 'row');
-      plan('.experience-content', 'rise');
-      plan('.community-list > article', 'row', 55);
-      plan('.skill-list > div', 'rise', 55);
+      plan('.timeline-meta p', 'row');
+      plan('.experience-content h2, .community-list h3, .skill-list h3', 'heading');
+      plan('.experience-content > p:not(.eyebrow), .experience-points > li, .community-list p', 'rise', 80);
     },
     projects() {
-      plan('.project-story-top > div', 'heading');
-      plan('.project-story-top > p', 'fade');
-      plan('.project-stage', 'frame');
-      plan('.project-under', 'rise');
+      plan('.project-story-top h2, .project-details-grid h3', 'heading');
+      plan('.project-story-top > p, .project-tagline, .project-details-grid p', 'rise', 80);
     },
     library() {
-      plan('.shelf-books > .book', 'book', 40);
-      plan('.library-group-title', 'heading');
-      plan('.influence-list > li', 'row', 40);
-      plan('.own-margins .fragment-card', 'fade', 55);
+      plan('.library-group-title h2', 'heading');
+      plan('.library-group-title > p, .library-shelf > p, .reading-note > div > p:not(.eyebrow)', 'rise');
+      plan('.influence-details > summary > span:nth-child(2)', 'row', 90);
+      plan('.own-margins .fragment-card > blockquote', 'verse', 100);
     },
     'listening-room'() {
-      plan('.record-sleeve', 'frame');
-      plan('.artist-list-heading, .favourites-heading, .all-time-heading', 'heading');
-      plan('.artist-row, .all-time-tracks > li', 'row', 45);
-      plan('.listening-note > div', 'rise', 60);
+      plan('.favourites-heading h2, .all-time-heading h2, .listening-note h2', 'heading');
+      plan('.artist-row > span:nth-child(2), .all-time-tracks .song-artist', 'row', 90);
+      plan('.all-time-heading > p:not(.eyebrow), .listening-note > div > p', 'rise');
     },
     marginalia() {
-      plan('.writing-doors > a, .marginalia-paths > a', 'rise', 70);
-      plan('.poetry-list > .poem-card', 'lift', 75);
-      plan('.fragment-list > .fragment-card', 'fade', 45);
-      plan('.marginalia-excerpt .featured-slot', 'verse');
+      plan('.writing-doors h2, .marginalia-paths h3', 'heading', 110);
+      plan('.writing-doors > a > p:not(.eyebrow)', 'rise', 100);
+      plan('.poetry-list .poem-card h3', 'heading', 110);
+      plan('.poetry-list .poem-excerpt', 'rise', 110);
+      plan('.fragment-list > .fragment-card > blockquote', 'verse', 100);
+      plan('.marginalia-excerpt blockquote', 'verse');
       plan('.poem-stanza', 'verse');
-      plan('.poem-colophon, .poem-navigation', 'fade');
     },
     now() {
-      plan('.now-main > article', 'rise');
-      plan('.now-sidebar > div', 'fade', 60);
+      plan('.now-main h2, .now-sidebar h3', 'heading');
+      plan('.now-main p:not(.eyebrow), .now-sidebar p', 'rise', 80);
     },
     contact() {
       plan('.contact-lead', 'heading');
-      plan('.contact-caption, .contact-note', 'fade');
-      plan('.contact-elsewhere > a', 'row', 60);
+      plan('.contact-caption, .contact-note > p:not(.eyebrow)', 'rise');
+      plan('.contact-elsewhere strong, .contact-elsewhere small', 'row', 80);
     },
   };
   for (const [page, profile] of Object.entries(profiles)) {
@@ -83,7 +78,8 @@ export function initMotion(doc, view) {
   }
 
   function entryKey(element) {
-    return element.dataset.entry ? `${element.tagName}:${element.dataset.entry}` : '';
+    const entry = element.closest('[data-entry]');
+    return entry ? `${entry.dataset.entry}:${element.tagName}` : '';
   }
   function markSeen(element) {
     seen.add(element);
@@ -104,7 +100,8 @@ export function initMotion(doc, view) {
   }
   function related(a, b) { return b && (a === b || a.contains(b) || b.contains(a)); }
   function mustShow(element) {
-    return element.contains(doc.activeElement) || related(element, hashTarget());
+    const focused = doc.activeElement;
+    return (focused && focused !== doc.body && focused !== doc.documentElement && related(element, focused)) || related(element, hashTarget());
   }
   function play(element, settings, delay) {
     markSeen(element);
@@ -112,30 +109,26 @@ export function initMotion(doc, view) {
     targets.delete(element);
     if (reduced.matches || mustShow(element)) return revealNow(element);
     const small = compact.matches;
-    const distance = small ? 12 : 22;
     const styles = view.getComputedStyle(element);
     const base = styles.transform === 'none' ? '' : styles.transform;
     const shifts = {
-      title: `translateY(${small ? 12 : 20}px)`,
-      heading: `translateY(${small ? 8 : 12}px)`,
-      rise: `translateY(${distance}px)`,
-      lift: `translateY(${distance}px)`,
-      row: `translateX(${small ? -6 : -12}px)`,
-      frame: `translateY(${small ? 8 : 14}px) scale(.985)`,
-      book: `translateY(${small ? 14 : 24}px)`,
+      title: `translateY(${small ? 24 : 38}px)`,
+      heading: `translateY(${small ? 20 : 30}px)`,
+      rise: `translateY(${small ? 14 : 22}px)`,
+      row: `translateX(${small ? -10 : -18}px)`,
       fade: '', verse: '',
     };
-    const duration = { title: 680, heading: 550, rise: 600, lift: 640, row: 480, frame: 700, book: 640, fade: 540, verse: 720 }[settings.kind];
+    const duration = { title: 1050, heading: 950, rise: 850, row: 800, fade: 900, verse: 1100 }[settings.kind];
     const opacity = Number(styles.opacity);
     element.dataset.revealState = 'running';
     try {
       const animation = element.animate([
-        { opacity: settings.kind === 'verse' ? .12 : 0, transform: `${base} ${shifts[settings.kind]}`.trim() || 'none' },
+        { opacity: 0, transform: `${base} ${shifts[settings.kind]}`.trim() || 'none' },
         { opacity, transform: base || 'none' },
       ], {
-        duration: small ? duration * .85 : duration,
-        delay: small ? Math.min(delay, 70) : Math.min(delay, 160),
-        easing: 'cubic-bezier(.22,1,.36,1)', fill: 'backwards',
+        duration: small ? duration * .9 : duration,
+        delay: small ? Math.min(delay, 120) : Math.min(delay, 220),
+        easing: 'cubic-bezier(.22,.65,.3,1)', fill: 'backwards',
       });
       running.set(element, animation);
       const finished = () => {

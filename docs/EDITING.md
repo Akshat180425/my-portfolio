@@ -81,7 +81,7 @@ Every page's primary menu contains Projects, Experience, Marginalia, and Resume.
 
 ### Scroll motion
 
-`src/scripts/motion.mjs` defines the reveal targets and pacing for each page. Projects and room cards rise in short sequences; experience and Library rows ease sideways; images and the book shelf lift gently; poems fade without moving their lines. Reveals run once per element per visit. Writing collections remember already-seen pieces when filtering or changing pages, using the `portfolio:collection-rendered` event from `collections.js`.
+`src/scripts/motion.mjs` animates text only. Headings have a clear upward entrance; body copy rises a shorter distance; author and artist names ease sideways; poems and quotations fade without moving their lines. Images, card backgrounds, book spines, the record, borders, and controls stay still. Entrances take roughly 0.8–1.1 seconds, with short staggered delays for neighbouring text. Reveals run once per element per visit. Writing collections remember the heading, excerpt, or quotation separately when filtering or changing pages, using the `portfolio:collection-rendered` event from `collections.js`.
 
 Content is visible by default, including without JavaScript or animation support. Reduced-motion preferences disable scroll effects and cancel any already running. Keyboard focus, direct section links, and printing show related content immediately. Mobile uses shorter distances and delays. Keep controls and primary actions stable; avoid animating nested containers and their contents together. Run `node --test scripts/motion.test.mjs` after changing the motion controller, then check actual scrolling on desktop and mobile.
 
