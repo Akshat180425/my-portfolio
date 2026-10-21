@@ -4,7 +4,8 @@
 - Poems: edit `src/data/poems.mjs`. See the poetry instructions below.
 - Short writing: edit `src/data/fragments.mjs`. Each entry contains a stable slug, theme, and original text. These appear untitled in **Lines that linger**. The saved order is shuffled rather than alphabetical; preserve the author's exact wording when rearranging entries.
 - Reflections: edit `src/data/reflections.mjs`. Each Library personality and original short piece has an expandable “In conversation with the words” panel. See the review instructions below.
-- Literary context: edit `src/data/library-contexts.mjs`. Each Library entry names a work, provides context paragraphs, and links the relevant text or reference under “Within the work”. “My reading” follows with the personal interpretation.
+- Literary context: edit `src/data/library-contexts.mjs`. Add “Within the work” only when the scene, image, or argument helps explain the selected passage. Entries without context go straight to the personal interpretation; attribution links stay beneath quotations.
+- Reading shelf: edit `src/data/reading-shelf.mjs`. Literary authors have `read` and `horizon` title lists, displayed as “Read” and “On the horizon”. Only Dostoevsky currently has a `current` list. Empty groups are omitted; titles are sorted alphabetically and included in Library search. Keep the current book in sync with `personal.currentReading` on Now.
 - Project studies: edit `src/data/case-studies.mjs`. The three pages share `src/pages/project.mjs`, with separate introductions, product journeys, architecture, engineering challenges, next questions, and pinned source references.
 - Teaching and internship: edit `src/pages/teaching.mjs` and `src/pages/internship.mjs`. The original lecture files live under `public/assets/teaching/`.
 - Current reading and listening: update `personal.currentReading` and `personal.currentListening`.
@@ -15,6 +16,8 @@
 - All-time favourites: edit `allTimeFavourites`, using `{ title, artist, url }`. These appear in “Songs I come back to” and remain visible independently of the artist selector.
 
 The artist selector links directly to the selected artist’s Spotify profile and switches their “My favourites” song list. It does not play audio. The Alankar link goes directly to that campus role on Experience. There is no contact-form service; email links open Gmail compose, and Copy email copies the address.
+
+Subtle motion lives in `src/scripts/app.js` and the final rules of `src/styles/chapters.css`. Section headings settle once as they enter view; reflection openings and artist changes have short transitions. Content is visible without JavaScript, and the system reduced-motion preference disables these effects, including a preference change during an active animation.
 
 
 ## Adding poems
@@ -58,7 +61,7 @@ Use Unicode Devanagari for Hindi text. AnmolHindi stores letters using legacy ch
 
 Revise each entry's `paragraphs` in your own voice. The `status` field is optional editorial metadata and does not affect the public presentation. The renderer is `src/components/reflection.mjs`, using native disclosure controls that also work without JavaScript.
 
-Library context is keyed by the same personality names in `library-contexts.mjs`, with `work`, `paragraphs`, and `sources` (`label` and `url`). The `reading()` helper attaches it to the corresponding interpretation. Keep factual context and personal readings distinct; questions connect to a relevant work without becoming attributed quotations. Search includes the work title and context paragraphs. Original short pieces have no external-work context, so their existing panel layout stays compact.
+Library context is optional and keyed by the same personality names in `library-contexts.mjs`, with `work`, `paragraphs`, and `sources` (`label` and `url`). The `reading()` helper attaches it when available. Keep factual context and personal readings distinct; questions connect to a relevant work without becoming attributed quotations. Search includes book lists, the work title, and context paragraphs. When removing context, make sure the personal reading still makes sense on its own. Original short pieces have no external-work context, so their existing panel layout stays compact.
 
 An optional `excerpt` selects exact lines from an existing poem: `{ poem: 'lost', stanza: 0, lines: [1] }`. Stanza and line indices start at zero. The component links to the poem and fails the build if a referenced line is missing. Recheck these selections if you rearrange poem stanzas. Library search includes the interpretation paragraphs as well as the original note.
 

@@ -106,6 +106,25 @@
 .reflection-plus { color: var(--gold); font-size: 20px; flex-shrink: 0; transition: transform .2s ease; }
 .word-reflection[open] > summary .reflection-plus { transform: rotate(45deg); }
 .reflection-body { padding-top: 18px; }
+.author-books { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 30px; margin: 4px 0 32px; padding: 22px 0 27px; border-block: 1px solid var(--line); }
+.shelf-status { min-width: 0; }
+.shelf-status h3 { margin: 0 0 13px; font: 10px/1.6 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
+.shelf-read h3 { color: #b3c1a6; }
+.shelf-status ul { margin: 0; padding: 0; list-style: none; }
+.shelf-status li { position: relative; padding: 5px 0 5px 15px; font: 21px/1.35 var(--serif); color: var(--text); overflow-wrap: anywhere; }
+.shelf-status li::before { content: ''; position: absolute; left: 0; top: 16px; width: 4px; height: 4px; background: var(--gold); border-radius: 50%; opacity: .65; }
+.shelf-read li::before { background: #b3c1a6; }
+.shelf-collection { color: var(--muted); font: italic 17px/1.5 var(--serif); margin: -3px 0 9px; }
+.shelf-current { grid-column: 1 / -1; padding: 17px 20px; border-left: 2px solid var(--gold); background: var(--surface); }
+.shelf-current h3 { margin-bottom: 7px; }
+.shelf-current li { padding-left: 0; font-size: 25px; }
+.shelf-current li::before { content: none; }
+.shelf-current .text-link { margin-top: 10px; font-family: var(--sans); font-size: 10px; }
+@media (max-width: 650px) {
+  .author-books { grid-template-columns: minmax(0, 1fr); gap: 22px; padding-block: 19px 23px; }
+  .shelf-status li { font-size: 21px; }
+  .shelf-current { padding: 15px; }
+}
 .reflection-body > p, .reflection-context > p { font: 13px/1.9 var(--sans); color: var(--body); margin: 0 0 17px; }
 .reflection-body .reflection-label { font: 10px/1.6 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
 .reflection-context > .reflection-work { font: italic 22px/1.3 var(--serif); color: var(--text); margin-bottom: 18px; }
@@ -246,4 +265,15 @@
   .demo-controls { flex-direction: column; }
   .demo-controls button { min-height: 44px; }
   .demo-gallery figcaption h3 { font-size: 25px; }
+}
+
+/* Content is readable immediately. Disclosures and artist changes settle softly. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-copy, .page-head { animation-duration: .45s; }
+  @keyframes appear { from { opacity: .78; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+  .influence-details[open] > .influence-note,
+  .word-reflection[open] > .reflection-body { animation: quiet-open .18s ease-out; }
+  .artist-notes:not([hidden]) { animation: quiet-arrival .28s var(--ease); }
+  @keyframes quiet-open { from { opacity: .78; } to { opacity: 1; } }
+  @keyframes quiet-arrival { from { opacity: .78; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 }

@@ -1,5 +1,6 @@
 // Work-level context is separate from the personal readings in reflections.mjs.
 // Questions are connected to a relevant work, never presented as author quotations.
+// Include context only when a scene, image, or argument helps the passage make sense.
 export const libraryContexts = {
   'Adi Shankara': {
     work: 'The Brahma Sutra commentary · the introduction on superimposition',
@@ -16,22 +17,6 @@ export const libraryContexts = {
       'He draws particular attention to the descent, when Sisyphus walks back toward the rock and knows the full shape of his fate. The punishment continues, yet Camus locates a kind of freedom in that consciousness and refusal to be inwardly defeated. The happiness of the final line belongs to this lucid revolt, without a promise that the task will end.',
     ],
     sources: [{ label: 'Stanford Encyclopedia of Philosophy · Camus, §3.4', url: 'https://plato.stanford.edu/entries/camus/' }],
-  },
-  'Buddha': {
-    work: 'Dhammapada · chapter 12, “The Self” · verse 165',
-    paragraphs: [
-      'This verse sits among teachings about self-discipline and responsibility. Nearby verses ask a person to establish their own conduct before instructing others, and acknowledge how difficult it can be to do what is beneficial.',
-      'The verse continues beyond the selected passage by saying that another person cannot purify one. In this setting, the emphasis is on the ethical work that cannot be delegated: what someone teaches or offers still has to become one’s own practice.',
-    ],
-    sources: [{ label: 'Read Dhammapada · chapter 12', url: 'https://accesstoinsight.org/tipitaka/kn/dhp/dhp.12.budd.html' }],
-  },
-  'Dante Alighieri': {
-    work: 'Inferno · Canto V · Francesca’s account',
-    paragraphs: [
-      'Francesca speaks these words to Dante in the circle of the lustful, where she and Paolo are carried in an unceasing storm. Asked how their love began, she recalls their shared reading of Lancelot and the kiss that followed.',
-      'The remembered happiness therefore belongs to a story told from within punishment. Dante the traveller is overcome with pity, while the poem also asks how desire, reading, and responsibility become entangled. Francesca’s moving account is one voice within that larger moral drama.',
-    ],
-    sources: [{ label: 'Read Inferno · Canto V', url: 'https://www.gutenberg.org/cache/epub/1001/pg1001-images.html' }],
   },
   'Franz Kafka': {
     work: 'Before the Law · the man at the entrance',
@@ -84,14 +69,6 @@ export const libraryContexts = {
       { label: 'Gerasim’s care · chapter VII', url: 'https://en.wikisource.org/wiki/The_Death_of_Ivan_Ilych/VII' },
     ],
   },
-  'Marcus Aurelius': {
-    work: 'Meditations · IV.3 · returning inward',
-    paragraphs: [
-      'The sentence closes a passage about retreating into one’s own mind. Marcus contrasts the wish to escape to the countryside or the coast with the possibility of an inward pause that restores judgement.',
-      'He ends by recalling two things: our disturbance involves the judgements we make, and everything we encounter is changing. In this setting, “opinion” concerns how the mind meets events. The surrounding reflections repeatedly connect that inner discipline with acting justly among other people.',
-    ],
-    sources: [{ label: 'Read Meditations · Book IV', url: 'https://www.gutenberg.org/files/6920/6920-h/6920-h.htm' }],
-  },
   'Miguel de Cervantes': {
     work: 'Don Quixote · Part I, chapter VIII · the windmills',
     paragraphs: [
@@ -100,14 +77,6 @@ export const libraryContexts = {
     ],
     sources: [{ label: 'Read Don Quixote · Part I, chapter VIII', url: 'https://www.gutenberg.org/cache/epub/996/pg996-images.html' }],
   },
-  'Oscar Wilde': {
-    work: 'Lady Windermere’s Fan · Act III · Lord Darlington’s rooms',
-    paragraphs: [
-      'Lord Darlington says this during a conversation about whether he and the other men are good or bad. The reply is immediately treated as evidence that he is in love, and he goes on to describe the married woman he loves.',
-      'The surrounding comedy complicates people’s confident judgements about goodness and reputation. The stars carry a romantic possibility, but the line also belongs to a particular speaker, with desires and interests of his own.',
-    ],
-    sources: [{ label: 'Read Lady Windermere’s Fan · Act III', url: 'https://www.gutenberg.org/cache/epub/790/pg790-images.html' }],
-  },
   'Plato & Socrates': {
     work: 'Plato’s Apology · 38a · after the guilty verdict',
     paragraphs: [
@@ -115,22 +84,6 @@ export const libraryContexts = {
       'His response ties a worthwhile life to examining virtue and questioning himself and others. In the Apology, examination is therefore an activity he is unwilling to surrender even for safety: the sentence carries the weight of a decision made under threat of death.',
     ],
     sources: [{ label: 'Read Plato’s Apology', url: 'https://www.gutenberg.org/files/1656/1656-h/1656-h.htm' }],
-  },
-  'Shiv Kumar Batalvi': {
-    work: 'Shikra · the beloved as a bird',
-    paragraphs: [
-      'Shikra offers a particular answer to the question above. The speaker addresses a mother and describes a beloved through the image of a hawk, filling that presence with colour, fragrance, movement, and bodily sensation. The bird eventually flies away and does not return.',
-      'The departure follows an intensely sensory evocation of presence. That sequence gives absence a shape: the reader has been made to imagine what is now missing. This is a connection to the poem, rather than a quotation of the question from Batalvi.',
-    ],
-    sources: [{ label: 'Read Shikra · Punjabi text and English translation', url: 'https://folkpunjab.org/poetry/shiv-kumar-batalvi/shikra/' }],
-  },
-  'Søren Kierkegaard': {
-    work: 'Journal JJ:167 · 1843 · often cited as IV A 164',
-    paragraphs: [
-      'The familiar sentence condenses a longer journal entry. Kierkegaard grants that life is understood retrospectively, then insists that living continues forward. He goes further: a person cannot secure a moment of complete stillness from which to occupy that backward-looking position fully.',
-      'The entry therefore leaves a tension unresolved. Hindsight can illuminate experience, but someone still living cannot stand entirely outside time and possess the finished meaning of their life.',
-    ],
-    sources: [{ label: 'Read the Danish entry and its critical-edition reference', url: 'https://etxt.dk/kierkegaard/citat/' }],
   },
   'Sylvia Plath': {
     work: 'The Bell Jar · chapter 20 · Joan’s funeral',

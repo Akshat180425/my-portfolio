@@ -15,7 +15,7 @@ I'm a final-year Mathematics and Computing undergraduate at **IIT Ropar**, Class
 | [About](https://akshat180425.github.io/my-portfolio/about/) | My background, education, and interests. |
 | [Contact](https://akshat180425.github.io/my-portfolio/contact/) | A way to begin a conversation. |
 | [Experience](https://akshat180425.github.io/my-portfolio/experience/) | Professional experience, teaching materials, and my contribution to Unilic. |
-| [Library](https://akshat180425.github.io/my-portfolio/library/) | Writers, philosophers, passages, and questions that stay. |
+| [Library](https://akshat180425.github.io/my-portfolio/library/) | Writers, philosophers, books read and on the horizon, and passages that stay. |
 | [Listening Room](https://akshat180425.github.io/my-portfolio/listening-room/) | Favourite artists, songs, and a playlist. |
 | [Marginalia](https://akshat180425.github.io/my-portfolio/marginalia/) | Original English and Hindi poems, and **Lines that linger**: short pieces on love, becoming, and self-respect. |
 | [Now](https://akshat180425.github.io/my-portfolio/now/) | The present chapter: what I'm focused on. |

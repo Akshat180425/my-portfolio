@@ -94,7 +94,7 @@ export const courses = [
 // These are interests supplied by Akshat, not a claim that every work has been read.
 export const library = [
   { category: 'Philosophy', title: 'Questions that stay.', description: 'Voices I’m drawn to, across traditions and centuries.', entries: ['Plato & Socrates', 'Friedrich Nietzsche', 'Albert Camus', 'Adi Shankara', 'Buddha', 'Søren Kierkegaard', 'Marcus Aurelius'] },
-  { category: 'Literature', title: 'Other lives, on the page.', description: 'Poetry, fiction, and worlds that invite a longer look.', entries: ['Dante Alighieri', 'Homer', 'Fyodor Dostoevsky', 'Franz Kafka', 'Shiv Kumar Batalvi', 'Sylvia Plath', 'William Shakespeare', 'Leo Tolstoy', 'Miguel de Cervantes', 'Oscar Wilde', 'George R. R. Martin'] },
+  { category: 'Literature', title: 'Other lives, on the page.', description: 'Poetry, fiction, and worlds that invite a longer look.', entries: ['Dante Alighieri', 'Homer', 'Fyodor Dostoevsky', 'Franz Kafka', 'Sylvia Plath', 'William Shakespeare', 'Leo Tolstoy', 'Miguel de Cervantes', 'Oscar Wilde', 'George R. R. Martin'] },
 ];
 
 // Selected quotations and original reflection prompts. User-selected wording
@@ -112,7 +112,6 @@ export const libraryNotes = {
   'Homer': { type: 'question', text: 'Is coming home a return to a place, or to a version of ourselves?' },
   'Fyodor Dostoevsky': { type: 'question', text: 'How much of a person can be understood through their contradictions?' },
   'Franz Kafka': { type: 'quote', text: 'Before the Law stands a doorkeeper.', attribution: 'Before the Law', source: 'https://web.mit.edu/norvin/www/somethingelse/kafka2.html' },
-  'Shiv Kumar Batalvi': { type: 'question', text: 'How can language make absence feel so present?' },
   'Sylvia Plath': { type: 'quote', text: 'I am. I am. I am.', attribution: 'The Bell Jar', source: 'https://www.gutenberg.ca/ebooks/plaths-belljar/plaths-belljar-00-h.html' },
   'William Shakespeare': { type: 'quote', text: 'Cowards die many times before their deaths; the valiant never taste of death but once.', attribution: 'Julius Caesar · Act II, Scene II', source: 'https://www.folger.edu/explore/shakespeares-works/julius-caesar/read/2/2/' },
   'Leo Tolstoy': { type: 'question', text: 'Which small, ordinary choices quietly become the shape of a life?' },

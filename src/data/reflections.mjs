@@ -20,8 +20,8 @@ export const influenceReflections = {
     'That does not mean every misfortune is deserved or under personal control. The distinction that matters to me is between being responsible for my actions and imagining I am responsible for everything that happens to me.',
   ]),
   'Dante Alighieri': reading('Dante Alighieri', [
-    'Francesca’s remembered happiness makes absence feel precise. A memory can preserve what mattered while making its distance from the present almost unbearable. Gratitude and grief can arrive together.',
-    'Her account also makes me notice the stories people tell around their choices. I can be moved by someone’s pain and still ask what their telling leaves out. That tension gives the line more depth than a simple statement about nostalgia.',
+    'A memory can preserve what mattered while making its distance from the present almost unbearable. Gratitude and grief can arrive together: the happiness was real, and so is the ache of remembering it from somewhere else.',
+    'I do not hear a reason to wish that happiness had never happened. What hurts is the contrast between then and now. Remembering can be both a way of keeping something and a reminder that I cannot return to it unchanged.',
   ], { poem: 'lost', stanza: 0, lines: [1] }),
   'Franz Kafka': reading('Franz Kafka', [
     'The doorway makes me think about permission: the permission an institution withholds, and the permission a person gradually learns to withhold from themselves. In the story, waiting becomes a life rather than a brief interruption of it.',
@@ -57,19 +57,15 @@ export const influenceReflections = {
   ]),
   'Oscar Wilde': reading('Oscar Wilde', [
     'The image makes hope a direction of attention rather than proof that the situation is already good. Looking upward does not erase where the speaker is standing.',
-    'Knowing who speaks it keeps me attentive to the difference between beautiful language and trustworthy conduct. I can keep the upward glance while asking whether my actions deserve the generous story I tell about myself.',
+    'I want that upward glance to lead somewhere in the way I live. Hope can offer direction, but my actions still have to give substance to the generous story I tell about myself.',
   ]),
   'Plato & Socrates': reading('Plato & Socrates', [
     'I read examination as the willingness to ask why I believe something, especially when the belief is convenient. A life can be full of activity while its reasons remain largely borrowed.',
     'The trial gives that willingness a cost. It asks whether I would keep examining a belief when doing so threatens comfort or approval. I want reflection to lead back into action, with the courage to revise what I can no longer honestly defend.',
   ]),
-  'Shiv Kumar Batalvi': reading('Shiv Kumar Batalvi', [
-    'The bird’s departure hurts because the poem has first made its presence so vivid. I read that as a lesson in how an image can carry what an explanation cannot: a missing person leaves colours, gestures, and sensations behind.',
-    'This is a way I want to think about my own writing too. A particular detail can carry a feeling more patiently than an explanation of how intense that feeling is.',
-  ], { poem: 'lost', stanza: 2, lines: [1] }),
   'Søren Kierkegaard': reading('Søren Kierkegaard', [
     'Looking back gives events a pattern that was unavailable while they were happening. The difficulty is that decisions still have to be made before that pattern becomes clear.',
-    'The longer entry also unsettles the comfort of hindsight: my present explanation may be revised again. I read that as a reason for humility toward earlier versions of myself, and for making the next decision without demanding a certainty that living cannot supply.',
+    'My present explanation may be revised again. I read that as a reason for humility toward earlier versions of myself, and for making the next decision without demanding a certainty that living cannot supply.',
   ]),
   'Sylvia Plath': reading('Sylvia Plath', [
     'At the funeral, the rhythm feels both fragile and insistent to me. Esther’s body continues to assert a presence while she is facing another person’s absence. That makes the repetition quieter, and more moving, than a declaration of triumph.',
